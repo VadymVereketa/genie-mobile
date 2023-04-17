@@ -1,0 +1,73 @@
+import React from 'react';
+import {Image, StyleSheet, View} from 'react-native';
+import useTheme from '../../../Context/ThemeContext';
+import sizes from '../../../utils/sizes';
+import DefaultImage from '../../../assets/defaultImg';
+import {Font12} from '../../../uikit/Typography/Font12';
+import {responsiveWidth} from '../../../utils/responsive-dimensions';
+import Button from '../../../uikit/Button';
+import Genie from '../assets/genie.svg';
+import {Font14} from '../../../uikit/Typography/Font14';
+import {useAppNavigation} from '../../../navigators/hooks';
+import {useNavigation} from '@react-navigation/native';
+import {CommunityScreenProps} from '../../../navigators/types';
+
+const AddGroupItem = () => {
+  const navigation =
+    useNavigation<CommunityScreenProps<'GroupCommunityScreen'>['navigation']>();
+  const {palette} = useTheme();
+
+  return (
+    <View
+      style={[
+        styles.con,
+        {
+          borderColor: palette.border,
+        },
+      ]}>
+      <View
+        style={[
+          styles.viewImage,
+          {
+            backgroundColor: palette.secondary,
+          },
+        ]}>
+        <Genie width={'90%'} height={'90%'} />
+      </View>
+      <Font14.W600 textAlign="center">Make a group</Font14.W600>
+      <Font12.W400 textAlign="center" color="textLight" style={styles.text}>
+        Create a new group and find like-minded members
+      </Font12.W400>
+      <Button
+        onPress={() => {
+          navigation.navigate('AddGroupScreen');
+        }}>
+        Create
+      </Button>
+    </View>
+  );
+};
+
+export default AddGroupItem;
+
+const styles = StyleSheet.create({
+  con: {
+    borderWidth: 1,
+    borderRadius: sizes[8],
+    width: responsiveWidth(50) - sizes[24],
+    padding: sizes[8],
+  },
+  viewImage: {
+    width: sizes[82],
+    height: sizes[82],
+    borderRadius: sizes[82],
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    marginBottom: sizes[12],
+  },
+  text: {
+    marginBottom: sizes[12],
+    flexGrow: 1,
+  },
+});
