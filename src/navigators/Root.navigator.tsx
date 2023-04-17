@@ -45,6 +45,7 @@ const RootNavigator = React.memo(() => {
           component={ProfileSettingsNavigator}
         />
       )}
+
       {isAuth && (
         <Stack.Group>
           <Stack.Screen name="TabNavigator" component={TabNavigator} />
