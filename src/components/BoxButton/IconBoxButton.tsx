@@ -30,7 +30,7 @@ const IconBoxButton = ({asset, title, ...props}: IconBoxButtonProps) => {
           width={'25%'}
           height={'25%'}
           style={{
-            color: palette.primary,
+            color: palette.text,
           }}
         />
       ) : null}

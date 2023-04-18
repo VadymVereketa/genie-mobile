@@ -1,10 +1,10 @@
 <svg width="32" height="12" viewBox="0 0 32 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="6.10863" cy="2.80004" r="2.03636" fill="#3048EA"/>
-<circle cx="6.10863" cy="9.20043" r="2.03636" fill="#3048EA"/>
-<circle cx="1.16364" cy="5.99957" r="1.16364" fill="#3048EA"/>
-<circle cx="11.0543" cy="5.99957" r="1.16364" fill="#3048EA"/>
-<circle cx="25.8918" cy="2.80004" r="2.03636" fill="#3048EA"/>
-<circle cx="25.8918" cy="9.20043" r="2.03636" fill="#3048EA"/>
-<circle cx="20.9459" cy="5.99957" r="1.16364" fill="#3048EA"/>
-<circle cx="30.8365" cy="5.99957" r="1.16364" fill="#3048EA"/>
+<circle cx="6.10863" cy="2.80004" r="2.03636" fill="currentColor"/>
+<circle cx="6.10863" cy="9.20043" r="2.03636" fill="currentColor"/>
+<circle cx="1.16364" cy="5.99957" r="1.16364" fill="currentColor"/>
+<circle cx="11.0543" cy="5.99957" r="1.16364" fill="currentColor"/>
+<circle cx="25.8918" cy="2.80004" r="2.03636" fill="currentColor"/>
+<circle cx="25.8918" cy="9.20043" r="2.03636" fill="currentColor"/>
+<circle cx="20.9459" cy="5.99957" r="1.16364" fill="currentColor"/>
+<circle cx="30.8365" cy="5.99957" r="1.16364" fill="currentColor"/>
 </svg>
