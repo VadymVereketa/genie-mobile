@@ -30,6 +30,7 @@ export type QuestionItem = Omit<
   'backgroundColor' | 'asset' | 'parentId'
 > & {
   asset?: BoxIconsType | BoxImagesType;
+  name?: string;
 };
 
 export type QuestionType = {
@@ -40,4 +41,5 @@ export type QuestionType = {
 
   path: LeavesQuestionsState;
   parentId?: number;
+  isSearchable?: boolean;
 };

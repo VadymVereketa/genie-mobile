@@ -1,6 +1,7 @@
 import React from 'react';
 import type {NumberProp, SvgProps} from 'react-native-svg';
 
+import Apple from './svg/apple.svg';
 import ArrowBack from './svg/arrow-back.svg';
 import ArrowDown from './svg/arrow-down.svg';
 import ArrowRight from './svg/arrow-right.svg';
@@ -49,6 +50,7 @@ import Triangle from './svg/triangle.svg';
 import Web from './svg/web.svg';
 
 const icons = {
+  Apple,
   Eye,
   Paperclip,
   Send,

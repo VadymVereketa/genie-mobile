@@ -25,7 +25,15 @@ const IconBoxButton = ({asset, title, ...props}: IconBoxButtonProps) => {
 
   return (
     <BaseBoxButton {...props}>
-      {Icon ? <Icon width={'25%'} height={'25%'} /> : null}
+      {Icon ? (
+        <Icon
+          width={'25%'}
+          height={'25%'}
+          style={{
+            color: palette.primary,
+          }}
+        />
+      ) : null}
       {Img ? (
         <Image
           style={{

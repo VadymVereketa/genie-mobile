@@ -33,8 +33,8 @@ const LoginScreen = ({navigation}: AuthScreenProps<'LoginScreen'>) => {
     formState: {errors},
   } = useForm({
     defaultValues: {
-      email: 'vereketa@gmail.com',
-      password: '123456',
+      email: __DEV__ ? 'vereketa@gmail.com' : '',
+      password: __DEV__ ? '123456' : '',
     },
   });
 
@@ -95,7 +95,24 @@ const LoginScreen = ({navigation}: AuthScreenProps<'LoginScreen'>) => {
         Forgot password?
       </Font14.W400>
       <Line />
-      <SocialButton social={Social.Google} />
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}>
+        <SocialButton
+          containerStyle={{
+            width: '48%',
+          }}
+          social={Social.Google}
+        />
+        <SocialButton
+          containerStyle={{
+            width: '48%',
+          }}
+          social={Social.Apple}
+        />
+      </View>
       <View
         style={{
           flexGrow: 1,

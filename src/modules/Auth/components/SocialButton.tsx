@@ -1,10 +1,12 @@
 import React from 'react';
-import Button from '../../../uikit/Button';
-import Social from '../../../typings/Social';
+
+import type {IFigmaIcon} from '../../../components/FigmaIcon/FigmaIcon';
+import FigmaIcon from '../../../components/FigmaIcon/FigmaIcon';
 import useTheme from '../../../Context/ThemeContext';
-import FigmaIcon, {IFigmaIcon} from '../../../components/FigmaIcon/FigmaIcon';
-import sizes from '../../../utils/sizes';
+import Social from '../../../typings/Social';
+import Button from '../../../uikit/Button';
 import {Font14} from '../../../uikit/Typography/Font14';
+import sizes from '../../../utils/sizes';
 
 type Props = Parameters<typeof Button>[0] & {
   social: Social;
@@ -15,7 +17,12 @@ const socialInfo = (social: Social) => {
     case Social.Google:
       return {
         icon: 'Google',
-        text: 'Continue with Google',
+        //text: 'Continue with Google',
+      };
+    case Social.Apple:
+      return {
+        icon: 'Apple',
+        //text: 'Continue with Google',
       };
     default:
       return {
@@ -37,7 +44,7 @@ const SocialButton = ({social, ...props}: Props) => {
         flexDirection: 'row',
       }}>
       <FigmaIcon name={info.icon as IFigmaIcon} size={sizes[24]} />
-      <Font14.W400>{'  ' + info.text}</Font14.W400>
+      {/* <Font14.W400>{'  ' + info.text}</Font14.W400> */}
     </Button>
   );
 };

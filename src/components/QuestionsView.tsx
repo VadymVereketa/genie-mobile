@@ -28,6 +28,7 @@ import type {
 } from '../typings/Category';
 import {getPropertyKeyByReduxKey} from '../typings/CreateUser';
 import Button from '../uikit/Button';
+import TextInput from '../uikit/TextInput';
 import {responsiveHeight} from '../utils/responsive-dimensions';
 import sizes from '../utils/sizes';
 
@@ -53,6 +54,7 @@ const QuestionsView = ({
   const dispatch = useAppDispatch();
   const navigation = useAppNavigation();
   const [step, setStep] = React.useState(1);
+  const [search, setSearch] = React.useState('');
   const refPrevStep = React.useRef(0);
   const {palette} = useTheme();
   const length = questions.length;
@@ -99,8 +101,24 @@ const QuestionsView = ({
         entering={step > refPrevStep.current ? SlideInRight : SlideInLeft}
         key={step}>
         <Title title={questionItem.title} subtitle={questionItem.subtitle} />
+        {questionItem.isSearchable && (
+          <TextInput
+            value={search}
+            onChangeText={setSearch}
+            placeholder="Type something"
+            iconRight="Search"
+          />
+        )}
         <Body
-          options={questionItem.options}
+          options={
+            search !== ''
+              ? questionItem.options.filter(item => {
+                  return item.name
+                    ?.toLowerCase()
+                    .includes(search.toLowerCase());
+                })
+              : questionItem.options
+          }
           onChange={value => {
             setLocalValue(value);
           }}

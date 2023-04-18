@@ -8,7 +8,15 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "android-debug": "cd android && ./gradlew assembleDebug"
+    "android-debug": "cd android && ./gradlew assembleDebug",
+    "signing-report": "cd android && ./gradlew signingReport",
+    "build:android:prod:debug": "cd android && ./gradlew assembleDebug",
+    "build:android:prod:release": "cd android && ./gradlew assembleRelease",
+    "build:android:prod:release-abb": "cd android && ./gradlew bundleRelease",
+    "firebase:prod:debug": "firebase --token \"1//0cus2u4HzNFUFCgYIARAAGAwSNwF-L9IrScba8J_3gREC1fG2QsyXWtNiS6JpUPmcKEcGe7gmiBeUBvIf3RkSk5qROpSfJjIbrCs\" appdistribution:distribute ./android/app/build/outputs/apk/debug/app-debug.apk --app 1:362195227054:android:b02346e80b821724af383f --groups \"testers\"",
+    "firebase:prod:release": "firebase --token \"1//0cus2u4HzNFUFCgYIARAAGAwSNwF-L9IrScba8J_3gREC1fG2QsyXWtNiS6JpUPmcKEcGe7gmiBeUBvIf3RkSk5qROpSfJjIbrCs\" appdistribution:distribute ./android/app/build/outputs/apk/release/app-release.apk --app 1:362195227054:android:b02346e80b821724af383f --groups \"testers\"",
+    "upload:prod:debug": "yarn build:android:prod:debug && yarn firebase:prod:debug",
+    "upload:prod:release": "yarn build:android:prod:release && yarn firebase:prod:release"
   },
   "dependencies": {
     "@react-native-community/blur": "^4.3.0",

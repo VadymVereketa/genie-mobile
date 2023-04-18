@@ -31,14 +31,15 @@ const MoreQuestionsScreen = ({
         }}
       />
       <Title
-        title="Would you like more questions?"
-        subtitle="Based on your answers, AI will be able to find a more accurate product suitable for you"
+        color="primary"
+        title="Interested in a more in depth skin analysis?"
+        subtitle="Based on your answers, our advanced skincare analysis tool will be able to find products  suit you best"
       />
       <View
         style={{
           flexGrow: 1,
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'flex-start',
         }}>
         <Boarding />
       </View>

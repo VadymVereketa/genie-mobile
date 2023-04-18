@@ -39,8 +39,8 @@ const OnBoardingScreen = ({
         styles.con,
       ]}>
       <Title
-        title="Welcome on board!"
-        subtitle="First, we need information for AI to choose the perfect product for you"
+        title="Hello Gorgeous!"
+        subtitle="Let's customize your beauty routine with our virtual skin analysis tool"
         color="primary"
       />
       <View
@@ -57,15 +57,16 @@ const OnBoardingScreen = ({
         }}
         textAlign="center"
         color="textLight">
-        These questions you fill out once, after which they will be saved in
-        your profile
+        Answer the following questions once and they'll be saved to your profile
       </Font14.W400>
       <Button
         containerStyle={{
           width: '100%',
         }}
         onPress={() => {
-          navigation.navigate('SelectDateOfBirthScreen');
+          navigation.navigate('SelectDateOfBirthScreen', {
+            withoutTextInput: false,
+          });
         }}>
         Okay
       </Button>

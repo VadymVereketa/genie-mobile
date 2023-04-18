@@ -30,15 +30,17 @@ const SignUpScreen = ({navigation}: AuthScreenProps<'SignUpScreen'>) => {
   const dispatch = useAppDispatch();
   const error = useAppSelector(UserSelector.getError);
   const [isTermsChecked, setIsTermsChecked] = React.useState(false);
+  const [isNewsChecked, setIsNewsChecked] = React.useState(false);
+
   const {
     control,
     handleSubmit,
     formState: {errors},
   } = useForm({
     defaultValues: {
-      fullname: 'Vadym Vereketa',
-      email: 'vereketa@gmail.com',
-      password: '123456',
+      fullname: __DEV__ ? 'Vadym Vereketa' : '',
+      email: __DEV__ ? 'vereketa@gmail.com' : '',
+      password: __DEV__ ? '123456' : '',
     },
   });
 
@@ -108,12 +110,43 @@ const SignUpScreen = ({navigation}: AuthScreenProps<'SignUpScreen'>) => {
           </Font14.W400>
         </Font14.W400>
       </View>
+      <View
+        style={{
+          flexDirection: 'row',
+          marginBottom: sizes[16],
+        }}>
+        <CheckBox
+          style={{
+            marginRight: sizes[8],
+          }}
+          checked={isNewsChecked}
+          onChange={setIsNewsChecked}
+        />
+        <Font14.W400>I want to receive the news and special offers</Font14.W400>
+      </View>
       <Button disabled={!isTermsChecked} onPress={handleSubmit(onSubmit)}>
         Sign up
       </Button>
       {!!error && <Font14.W400 color="error">{error}</Font14.W400>}
       <Line />
-      <SocialButton social={Social.Google} />
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}>
+        <SocialButton
+          containerStyle={{
+            width: '48%',
+          }}
+          social={Social.Google}
+        />
+        <SocialButton
+          containerStyle={{
+            width: '48%',
+          }}
+          social={Social.Apple}
+        />
+      </View>
       <View
         style={{
           flexGrow: 1,

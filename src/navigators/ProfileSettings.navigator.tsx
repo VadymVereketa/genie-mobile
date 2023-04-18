@@ -9,6 +9,7 @@ import SaveProfileSetting from '../modules/ProfileSettings/SaveProfileSetting.sc
 import SelectBrandsScreen from '../modules/ProfileSettings/SelectBrands.screen';
 import SelectDateOfBirthScreen from '../modules/ProfileSettings/SelectDateOfBirth.screen';
 import UndertoneTypeScreen from '../modules/ProfileSettings/UndertoneType.screen';
+import WarningAgeScreen from '../modules/ProfileSettings/WarningAge.screen';
 import type {QuestionType} from '../typings/Category';
 
 export type ProfileSettingsNavigatorParamList = {
@@ -18,6 +19,7 @@ export type ProfileSettingsNavigatorParamList = {
   MoreQuestionsScreen: undefined;
   UndertoneTypeScreen: undefined;
   SelectBrandsScreen: undefined;
+  WarningAgeScreen: undefined;
   SelectDateOfBirthScreen: {
     withoutTextInput?: boolean;
   };
@@ -54,6 +56,7 @@ const ProfileSettingsNavigator = React.memo(() => {
         component={UndertoneTypeScreen}
       />
       <Stack.Screen name="SelectBrandsScreen" component={SelectBrandsScreen} />
+      <Stack.Screen name="WarningAgeScreen" component={WarningAgeScreen} />
       <Stack.Screen name="SaveProfileSetting" component={SaveProfileSetting} />
       <Stack.Screen
         name="ProfileSettingMoreQuestionsScreen"

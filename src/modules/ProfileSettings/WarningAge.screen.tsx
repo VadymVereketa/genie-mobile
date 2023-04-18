@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import DatePicker from 'react-native-date-picker';
 import {
   TouchableOpacity,
@@ -16,6 +16,7 @@ import {useAppDispatch, useAppSelector} from '../../redux/hooks';
 import {fetchDateOfBirth, UserSelector} from '../../redux/slices/userSlice';
 import Button from '../../uikit/Button';
 import {Font14} from '../../uikit/Typography/Font14';
+import {Font20} from '../../uikit/Typography/Font20';
 import {formatDate} from '../../utils/formatDate';
 import sizes from '../../utils/sizes';
 
@@ -42,10 +43,10 @@ const getYearFromCurrentDate = (date: Date) => {
   return currentYear - year - 1;
 };
 
-const SelectDateOfBirthScreen = ({
+const WarningAgeScreen = ({
   navigation,
   route,
-}: ProfileSettingsScreenProps<'SelectDateOfBirthScreen'>) => {
+}: ProfileSettingsScreenProps<'WarningAgeScreen'>) => {
   const {withoutTextInput} = route.params ?? {
     withoutTextInput: false,
   };
@@ -63,79 +64,40 @@ const SelectDateOfBirthScreen = ({
           navigation.goBack();
         }}
       />
-      <TouchableWithoutFeedback
-        disabled={withoutTextInput}
-        containerStyle={{
-          flexGrow: 1,
+      <Font20.W600
+        style={{
+          marginVertical: sizes[16],
         }}
-        onPress={() => {
-          setIsShow(false);
-        }}>
-        <Title
-          title={'What is your date of birth?'}
-          subtitle={
-            'Your skin needs change throughout your life so this will help us build the perfect regimen for you'
-          }
-        />
-        {!withoutTextInput && (
-          <TouchableOpacity
-            style={{
-              borderColor: palette.border,
-              alignItems: 'flex-start',
-              borderWidth: 1,
-              padding: sizes[12],
-              justifyContent: 'center',
-              borderRadius: 8,
-            }}
-            onPress={() => {
-              setIsShow(!isShow);
-            }}>
-            <Font14.W400>{date.toLocaleDateString()}</Font14.W400>
-          </TouchableOpacity>
-        )}
-        {isShow && (
-          <Animated.View
-            entering={withoutTextInput ? undefined : SlideInDown}
-            style={{
-              alignItems: 'center',
-              justifyContent: 'flex-end',
-            }}>
-            <DatePicker
-              date={date}
-              onDateChange={setDate}
-              androidVariant="iosClone"
-              mode="date"
-              locale="us-en"
-              textColor={palette.text}
-            />
-          </Animated.View>
-        )}
-      </TouchableWithoutFeedback>
-      <Button
-        containerStyle={{
-          width: '100%',
+        textAlign="center">
+        We are sorry to inform you that this app is only for users who are 13
+        years old or older
+      </Font20.W600>
+      <Font14.W400
+        style={{
+          marginBottom: sizes[16],
         }}
-        onPress={() => {
-          if (getYearFromCurrentDate(date) < 13) {
-            navigation.navigate('WarningAgeScreen');
-            return;
-          }
-          dispatch(
-            fetchDateOfBirth({
-              type: 'dateofbirth',
-              value: formatDate(date, 'MM-DD-YYYY'),
-            }),
-          );
-
-          if (withoutTextInput) {
+        textAlign="center"
+        color="textLight">
+        As per the Children's Online Privacy Protection Act (COPPA), we are
+        required to ensure the safety and privacy of children under the age of
+        13. Therefore, we cannot allow users who are under 13 to use our app. We
+        apologize for any inconvenience this may cause. If you are under 13,
+        please refrain from using our app and wait until you are old enough to
+        enjoy it safely. Thank you for your understanding.
+      </Font14.W400>
+      <Font14.W400 textAlign="center" color="textLight">
+        We apologize for any inconvenience this may cause. If you are under 13,
+        please refrain from using our app and wait until you are old enough to
+        enjoy it safely. Thank you for your understanding.
+      </Font14.W400>
+      <View style={styles.bottomView}>
+        <Button
+          onPress={() => {
             navigation.goBack();
-            return;
-          }
-
-          navigation.navigate('ProfileSettingScreen');
-        }}>
-        {withoutTextInput ? 'Save' : 'Next'}
-      </Button>
+          }}>
+          Okay
+        </Button>
+      </View>
     </ScreenContainer>
   );
 };
@@ -158,4 +120,4 @@ const styles = StyleSheet.create({
     marginVertical: sizes[24],
   },
 });
-export default SelectDateOfBirthScreen;
+export default WarningAgeScreen;

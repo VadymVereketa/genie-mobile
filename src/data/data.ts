@@ -1,4 +1,4 @@
-import {QuestionItem, QuestionType} from '../typings/Category';
+import type {QuestionItem, QuestionType} from '../typings/Category';
 
 const budgets: QuestionItem[] = [
   {
@@ -200,34 +200,42 @@ const brands: QuestionItem[] = [
   {
     id: 1,
     asset: 'Loreal',
+    name: 'Loreal',
   },
   {
     id: 2,
     asset: 'Chanel',
+    name: 'Chanel',
   },
   {
     id: 3,
     asset: 'Dior',
+    name: 'Dior',
   },
   {
     id: 4,
     asset: 'Mac',
+    name: 'Mac',
   },
   {
     id: 5,
     asset: 'Ysl',
+    name: 'Ysl',
   },
   {
     id: 6,
     asset: 'Maxfactor',
+    name: 'Maxfactor',
   },
   {
     id: 7,
     asset: 'BobbiBrown',
+    name: 'Bobbi Brown',
   },
   {
     id: 8,
     asset: 'Givenchy',
+    name: 'Givenchy',
   },
 ];
 
@@ -344,6 +352,7 @@ const profileSettings2: QuestionType[] = [
     title: 'What brands do you like?',
     subtitle: 'Select all that apply',
     path: 'profileSettings.brandsLikes',
+    isSearchable: true,
   },
   {
     id: 3,
@@ -358,6 +367,7 @@ const profileSettings2: QuestionType[] = [
     title: "What brands don't you like?",
     subtitle: 'Select all that apply',
     path: 'profileSettings.brandsDislikes',
+    isSearchable: true,
   },
   {
     id: 5,
