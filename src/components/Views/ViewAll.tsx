@@ -1,5 +1,8 @@
 import React from 'react';
-import {StyleProp, View, ViewStyle} from 'react-native';
+import type {StyleProp, ViewStyle} from 'react-native';
+import {View} from 'react-native';
+
+import {localize} from '../../localization/utils';
 import {Font14} from '../../uikit/Typography/Font14';
 import sizes from '../../utils/sizes';
 
@@ -21,7 +24,7 @@ const ViewAll = ({title, onPress, style}: Props) => {
       ]}>
       <Font14.W600>{title}</Font14.W600>
       <Font14.W600 onPress={onPress} color="primary">
-        View all
+        {localize('common.view-all')}
       </Font14.W600>
     </View>
   );

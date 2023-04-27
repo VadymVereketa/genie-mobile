@@ -20,6 +20,7 @@ import ScreenContainer from '../../components/ScreenContainer';
 import useTheme from '../../Context/ThemeContext';
 import {allGroupOptions, chooseGroupOptions} from '../../data/groupOptions';
 import {sortOptions} from '../../data/sortOptions';
+import {localize} from '../../localization/utils';
 import type {CommunityScreenProps} from '../../navigators/types';
 import Button from '../../uikit/Button';
 import PlusButton from '../../uikit/PlusButton';
@@ -89,7 +90,7 @@ const AddPhotoScreen = ({
         <ControllerTextInput
           control={control}
           name="product"
-          placeholder="Add additional items to the photo"
+          placeholder={localize('input.items.placeholder')}
           errors={errors}
           outerStyle={styles.textInput1}
         />
@@ -132,14 +133,14 @@ const AddPhotoScreen = ({
             borderColor: palette.border,
           },
         ]}>
-        <Font14.W400>{getValues().group.label}</Font14.W400>
+        <Font14.W400>{getValues().group.title}</Font14.W400>
         <FigmaIcon name="ArrowDown" size={sizes[14]} fill="transparent" />
       </TouchableOpacity>
 
       <ControllerTextInput
         control={control}
         name="subject"
-        placeholder="Enter a subject"
+        placeholder={localize('input.subject.placeholder')}
         errors={errors}
         outerStyle={styles.textInput}
       />
@@ -153,7 +154,7 @@ const AddPhotoScreen = ({
         <ControllerTextInput
           control={control}
           name="description"
-          placeholder="Write description..."
+          placeholder={localize('input.description.placeholder')}
           errors={errors}
           outerStyle={[
             styles.textInput2,
@@ -167,7 +168,7 @@ const AddPhotoScreen = ({
           <ControllerTextInput
             control={control}
             name="tag"
-            placeholder="Add tags..."
+            placeholder={localize('input.tags.placeholder')}
             errors={errors}
             outerStyle={styles.textInput1}
           />
@@ -197,7 +198,9 @@ const AddPhotoScreen = ({
         </View>
       </View>
       <ImagePicker ref={ref} />
-      <Button onPress={handleSubmit(onSubmit)}>Post now</Button>
+      <Button onPress={handleSubmit(onSubmit)}>
+        {localize('button.post-now')}
+      </Button>
       <Dropdown
         onChange={value => {
           setValue('group', value);

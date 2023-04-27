@@ -1,16 +1,18 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-import useTheme from '../../../Context/ThemeContext';
-import sizes from '../../../utils/sizes';
+
 import DefaultImage from '../../../assets/defaultImg';
-import {Font12} from '../../../uikit/Typography/Font12';
-import {responsiveWidth} from '../../../utils/responsive-dimensions';
-import Button from '../../../uikit/Button';
-import Genie from '../assets/genie.svg';
-import {Font14} from '../../../uikit/Typography/Font14';
+import useTheme from '../../../Context/ThemeContext';
+import {localize} from '../../../localization/utils';
 import {useAppNavigation} from '../../../navigators/hooks';
-import {useNavigation} from '@react-navigation/native';
-import {CommunityScreenProps} from '../../../navigators/types';
+import type {CommunityScreenProps} from '../../../navigators/types';
+import Button from '../../../uikit/Button';
+import {Font12} from '../../../uikit/Typography/Font12';
+import {Font14} from '../../../uikit/Typography/Font14';
+import {responsiveWidth} from '../../../utils/responsive-dimensions';
+import sizes from '../../../utils/sizes';
+import Genie from '../assets/genie.svg';
 
 const AddGroupItem = () => {
   const navigation =
@@ -34,15 +36,17 @@ const AddGroupItem = () => {
         ]}>
         <Genie width={'90%'} height={'90%'} />
       </View>
-      <Font14.W600 textAlign="center">Make a group</Font14.W600>
+      <Font14.W600 textAlign="center">
+        {localize('groups-community-screen.make-a-group')}
+      </Font14.W600>
       <Font12.W400 textAlign="center" color="textLight" style={styles.text}>
-        Create a new group and find like-minded members
+        {localize('groups-community-screen.make-a-group')}
       </Font12.W400>
       <Button
         onPress={() => {
           navigation.navigate('AddGroupScreen');
         }}>
-        Create
+        {localize('button.create')}
       </Button>
     </View>
   );

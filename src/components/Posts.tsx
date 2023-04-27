@@ -1,14 +1,16 @@
 import React from 'react';
-import {FlatList} from 'react-native-gesture-handler';
 import {View} from 'react-native';
+import {FlatList} from 'react-native-gesture-handler';
+
+import Points from './Points';
+import Post from './Post';
+import ViewAll from './Views/ViewAll';
+import useTheme from '../Context/ThemeContext';
+import {localize} from '../localization/utils';
+import {useAppNavigation} from '../navigators/hooks';
 import {Font14} from '../uikit/Typography/Font14';
 import {responsiveWidth} from '../utils/responsive-dimensions';
 import sizes from '../utils/sizes';
-import Post from './Post';
-import ViewAll from './Views/ViewAll';
-import Points from './Points';
-import useTheme from '../Context/ThemeContext';
-import {useAppNavigation} from '../navigators/hooks';
 
 const Posts = () => {
   const navigation = useAppNavigation();
@@ -24,7 +26,7 @@ const Posts = () => {
         borderBottomColor: palette.line,
       }}>
       <ViewAll
-        title="Latest posts"
+        title={localize('home-community-screen.latest-posts')}
         onPress={() => {
           navigation.navigate('PostsScreen');
         }}

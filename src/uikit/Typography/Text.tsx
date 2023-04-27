@@ -1,9 +1,10 @@
 import React from 'react';
 import type {TextProps, TextStyle} from 'react-native';
-import {StyleSheet, Text as RNText} from 'react-native';
+import {Clipboard, Text as RNText, StyleSheet} from 'react-native';
 import Animated from 'react-native-reanimated';
+
 import useTheme from '../../Context/ThemeContext';
-import {Theme} from '../../typings/Theme';
+import type {Theme} from '../../typings/Theme';
 
 interface MyTextProps extends TextProps {
   children?: any;
@@ -22,12 +23,17 @@ const MyText = React.memo(
     textTransform,
     textAlign,
     textDecorationLine,
+    onPress,
     ...props
   }: MyTextProps) => {
     const {palette} = useTheme();
 
     return (
       <RNText
+        onPress={() => {
+          Clipboard.setString(children);
+          onPress?.();
+        }}
         maxFontSizeMultiplier={1}
         style={StyleSheet.compose(
           {

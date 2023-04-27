@@ -9,6 +9,7 @@ import HeaderRight from './components/HeaderRight';
 import Header from '../../components/Header';
 import ScreenContainer from '../../components/ScreenContainer';
 import useTheme from '../../Context/ThemeContext';
+import {localize} from '../../localization/utils';
 import type {CommunityScreenProps} from '../../navigators/types';
 import Button from '../../uikit/Button';
 import {ControllerTextInput} from '../../uikit/TextInput';
@@ -43,13 +44,12 @@ const GroupCommunityScreen = ({
               textAlign="center"
               style={styles.title}
               color="textLight">
-              Join groups to discover content tailored to your interests and
-              meet like-minded members.
+              {localize('groups-community-screen.desc')}
             </Font14.W400>
             <ControllerTextInput
               control={control}
               name="search"
-              placeholder="Search or ask a question"
+              placeholder={localize('input.search.placeholder')}
               errors={errors}
               outerStyle={styles.input}
               iconRight="Search"
@@ -61,7 +61,7 @@ const GroupCommunityScreen = ({
                   borderColor: palette.line,
                 },
               ]}>
-              <Font14.W600>Categories</Font14.W600>
+              <Font14.W600>{localize('common.categories')}</Font14.W600>
               <View style={styles.categories}>
                 {options.map((item, index) => (
                   <View
@@ -77,7 +77,9 @@ const GroupCommunityScreen = ({
                 ))}
               </View>
             </View>
-            <Font14.W600>All groups</Font14.W600>
+            <Font14.W600>
+              {localize('groups-community-screen.all-groups')}
+            </Font14.W600>
           </>
         }
         bounces={false}

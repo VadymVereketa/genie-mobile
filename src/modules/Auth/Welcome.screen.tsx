@@ -4,6 +4,7 @@ import {StyleSheet, View} from 'react-native';
 import FigmaIcon from '../../components/FigmaIcon/FigmaIcon';
 import ScreenContainer from '../../components/ScreenContainer';
 import useTheme from '../../Context/ThemeContext';
+import {localize} from '../../localization/utils';
 import type {AuthScreenProps} from '../../navigators/types';
 import Button from '../../uikit/Button';
 import {Font14} from '../../uikit/Typography/Font14';
@@ -46,18 +47,21 @@ const WelcomeScreen = ({navigation}: AuthScreenProps<'WelcomeScreen'>) => {
       />
       <View style={styles.bottomView}>
         <Font14.W400 style={styles.text} color="primary">
-          Take a selfie & get custom cosmetics Recommendations powered by AI
+          {localize('welcome-screen.description')}
         </Font14.W400>
         <Button
           onPress={navigateToLogin}
           containerStyle={{
             marginBottom: sizes[24],
           }}>
-          Log in
+          {localize('welcome-screen.login')}
         </Button>
         <Font14.W400 textAlign="center">
-          Don’t have an account?{' '}
-          <Font14.W600 onPress={navigateToSignUp}> Sign up</Font14.W600>
+          {localize('welcome-screen.dont-have-account')}{' '}
+          <Font14.W600 onPress={navigateToSignUp}>
+            {' '}
+            {localize('welcome-screen.sign-up')}
+          </Font14.W600>
         </Font14.W400>
       </View>
     </ScreenContainer>

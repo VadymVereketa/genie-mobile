@@ -18,6 +18,7 @@ import Post from '../../components/Post';
 import Posts from '../../components/Posts';
 import ScreenContainer from '../../components/ScreenContainer';
 import useTheme from '../../Context/ThemeContext';
+import {localize} from '../../localization/utils';
 import type {CommunityScreenProps} from '../../navigators/types';
 import Button from '../../uikit/Button';
 import IconButton from '../../uikit/IconButton';
@@ -56,13 +57,12 @@ const HomeCommunityScreen = ({
           }}
           textAlign="center"
           color="textLight">
-          Ask questions, join challenges, and get recommendations from people
-          like you
+          {localize('home-community-screen.desc')}
         </Font14.W400>
         <ControllerTextInput
           control={control}
           name="search"
-          placeholder="Search or ask a question"
+          placeholder={localize('input.search.placeholder')}
           errors={errors}
           outerStyle={{}}
           iconRight="Search"
@@ -85,7 +85,8 @@ const HomeCommunityScreen = ({
             }}>
             <FigmaIcon name="Group" size={sizes[18]} />
             <Font12.W400>
-              <Font12.W600> 540,690 </Font12.W600>members
+              <Font12.W600> 540,690 </Font12.W600>
+              {localize('home-community-screen.members')}
             </Font12.W400>
           </View>
           <View
@@ -97,7 +98,8 @@ const HomeCommunityScreen = ({
             }}>
             <FigmaIcon name="Message" size={sizes[18]} fill="transparent" />
             <Font12.W400>
-              <Font12.W600> 540,690 </Font12.W600>posts
+              <Font12.W600> 540,690 </Font12.W600>
+              {localize('home-community-screen.posts')}
             </Font12.W400>
           </View>
         </View>
@@ -113,13 +115,15 @@ const HomeCommunityScreen = ({
               justifyContent: 'space-between',
               marginBottom: sizes[16],
             }}>
-            <Font14.W600>Trending groups</Font14.W600>
+            <Font14.W600>
+              {localize('home-community-screen.trending-groups')}
+            </Font14.W600>
             <Font14.W600
               onPress={() => {
                 navigation.navigate('GroupCommunityScreen');
               }}
               color="primary">
-              View all
+              {localize('common.view-all')}
             </Font14.W600>
           </View>
           <ScrollView
@@ -147,13 +151,15 @@ const HomeCommunityScreen = ({
               justifyContent: 'space-between',
               marginBottom: sizes[16],
             }}>
-            <Font14.W600>Latest photos</Font14.W600>
+            <Font14.W600>
+              {localize('home-community-screen.latest-photos')}
+            </Font14.W600>
             <Font14.W600
               color="primary"
               onPress={() => {
                 navigation.navigate('GalleryCommunityScreen');
               }}>
-              View all
+              {localize('common.view-all')}
             </Font14.W600>
           </View>
           <ScrollView horizontal>
@@ -182,7 +188,9 @@ const HomeCommunityScreen = ({
             alignItems: 'center',
             paddingVertical: sizes[16],
           }}>
-          <Font14.W600>Add new post</Font14.W600>
+          <Font14.W600>
+            {localize('home-community-screen.add-post')}
+          </Font14.W600>
           <IconButton
             style={{
               backgroundColor: palette.primaryLight,

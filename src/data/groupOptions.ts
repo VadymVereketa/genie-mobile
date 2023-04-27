@@ -4,22 +4,22 @@ export const groupOptions = [
     title: 'Pregnant & Nursing',
   },
   {
-    value: '2',
+    id: '2',
     title: 'LGBTQIA+',
   },
   {
-    value: '3',
+    id: '3',
     title: '45 + (anti-aging)',
   },
   {
-    value: '4',
+    id: '4',
     title: 'Health Related Issues',
   },
 ];
 
 export const chooseGroupOptions = [
   {
-    value: '0',
+    id: '0',
     title: 'Choose a group',
   },
   ...groupOptions,
@@ -27,7 +27,7 @@ export const chooseGroupOptions = [
 
 export const allGroupOptions = [
   {
-    value: '0',
+    id: '0',
     title: 'All',
   },
   ...groupOptions,
