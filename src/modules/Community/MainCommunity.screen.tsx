@@ -11,15 +11,16 @@ import Dropdown, {usePointDropdown} from '../../components/Dropdown';
 import Header from '../../components/Header';
 import ScreenContainer from '../../components/ScreenContainer';
 import useTheme from '../../Context/ThemeContext';
+import {localize} from '../../localization/utils';
 import type {CommunityScreenProps} from '../../navigators/types';
+import Button from '../../uikit/Button';
+import IconButton from '../../uikit/IconButton';
+import {ControllerTextInput} from '../../uikit/TextInput';
+import {Font12} from '../../uikit/Typography/Font12';
+import {Font14} from '../../uikit/Typography/Font14';
 import {Font20} from '../../uikit/Typography/Font20';
 import sizes from '../../utils/sizes';
-import {ControllerTextInput} from '../../uikit/TextInput';
 import Avatar from '../Auth/assets/signup-genie.png';
-import {Font14} from '../../uikit/Typography/Font14';
-import {Font12} from '../../uikit/Typography/Font12';
-import IconButton from '../../uikit/IconButton';
-import Button from '../../uikit/Button';
 
 const MainCommunityScreen = ({
   navigation,
@@ -41,22 +42,22 @@ const MainCommunityScreen = ({
   const options = [
     {
       id: 1,
-      title: 'Community Home',
-      desc: 'Ask questions, join challenges, and get recommendations from people like you',
+      title: localize('main-community-screen.home-title'),
+      desc: localize('main-community-screen.home-desc'),
       Img: CommunityHome,
       onPress: () => navigation.navigate('HomeCommunityScreen'),
     },
     {
       id: 2,
-      title: 'Groups',
-      desc: 'Ask questions, join challenges, and get recommendations from people like you',
+      title: localize('main-community-screen.groups-title'),
+      desc: localize('main-community-screen.groups-desc'),
       Img: Groups,
       onPress: () => navigation.navigate('GroupCommunityScreen'),
     },
     {
       id: 3,
-      title: 'Gallery',
-      desc: 'AAdd your photos and get inspired by fellow beauty lovers',
+      title: localize('main-community-screen.gallery-title'),
+      desc: localize('main-community-screen.gallery-desc'),
       Img: Gallery,
       onPress: () => navigation.navigate('GalleryCommunityScreen'),
     },
@@ -92,7 +93,9 @@ const MainCommunityScreen = ({
             flexGrow: 1,
           }}>
           <Font14.W600>username</Font14.W600>
-          <Font12.W400 color="textLight">Your community profile</Font12.W400>
+          <Font12.W400 color="textLight">
+            {localize('main-community-screen.profile')}
+          </Font12.W400>
         </View>
         <IconButton
           onLayout={onLayout}
@@ -138,7 +141,7 @@ const MainCommunityScreen = ({
         onClose={() => setIsShowMenu(false)}
         options={[
           {
-            title: 'Change nickname',
+            title: localize('main-community-screen.change-nickname'),
             id: '1',
           },
         ]}

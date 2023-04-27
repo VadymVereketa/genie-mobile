@@ -8,6 +8,7 @@ import Photo2 from './assets/Phoho2.png';
 import Header from '../../components/Header';
 import ScreenContainer from '../../components/ScreenContainer';
 import useTheme from '../../Context/ThemeContext';
+import {i18n, localize} from '../../localization/utils';
 import type {CommunityScreenProps} from '../../navigators/types';
 import Button from '../../uikit/Button';
 import {ControllerTextInput} from '../../uikit/TextInput';
@@ -22,6 +23,7 @@ const JoinCommunityScreen = ({
   navigation,
 }: CommunityScreenProps<'JoinCommunityScreen'>) => {
   const {palette} = useTheme();
+  const [state, setState] = React.useState({});
   const {
     control,
     handleSubmit,
@@ -34,11 +36,11 @@ const JoinCommunityScreen = ({
 
   return (
     <ScreenContainer style={styles.con}>
-      <Header title="Community" />
+      <Header title={localize('titles.community')} />
       <ControllerTextInput
         control={control}
         name="nickname"
-        placeholder="Create Nickname"
+        placeholder={localize('input.nickname.placeholder')}
         errors={errors}
         outerStyle={{
           marginBottom: sizes[16],
@@ -68,8 +70,7 @@ const JoinCommunityScreen = ({
         ))}
       </View>
       <Font14.W400 textAlign="center">
-        Community members can ask questions, join challenges, and get
-        recommendations from other members.
+        {localize('join-community-screen.desc')}
       </Font14.W400>
       <View
         style={{
@@ -77,11 +78,11 @@ const JoinCommunityScreen = ({
           justifyContent: 'flex-end',
         }}>
         <Font14.W400 color="textLight">
-          Join Community & agree to{' '}
+          {localize('join-community-screen.terms.text1')}
           <Font14.W400 color="primary" textDecorationLine="underline">
-            Terms of Use
+            {localize('join-community-screen.terms.text2')}
           </Font14.W400>
-          . Certain Community profile information is public.
+          {localize('join-community-screen.terms.text3')}
         </Font14.W400>
         <Button
           onPress={() => {
@@ -90,7 +91,7 @@ const JoinCommunityScreen = ({
           containerStyle={{
             marginTop: sizes[16],
           }}>
-          Join and Continue
+          {localize('button.join-and-continue')}
         </Button>
       </View>
     </ScreenContainer>

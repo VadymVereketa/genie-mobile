@@ -1,15 +1,17 @@
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-import sizes from '../../../utils/sizes';
+
+import useTheme from '../../../Context/ThemeContext';
+import {localize} from '../../../localization/utils';
+import {useAppNavigation} from '../../../navigators/hooks';
+import IconButton from '../../../uikit/IconButton';
+import {Font14} from '../../../uikit/Typography/Font14';
 import {Font28} from '../../../uikit/Typography/Font28';
+import sizes from '../../../utils/sizes';
 import LoginGenie from '../assets/login-genie.png';
 import ResetGenie from '../assets/reset-genie.png';
 import SignUpGenie from '../assets/signup-genie.png';
 import Smile from '../assets/smile.png';
-import useTheme from '../../../Context/ThemeContext';
-import IconButton from '../../../uikit/IconButton';
-import {Font14} from '../../../uikit/Typography/Font14';
-import {useAppNavigation} from '../../../navigators/hooks';
 
 type Props = {
   screen: 'login' | 'signup' | 'reset' | 'email' | 'new-password';
@@ -28,17 +30,16 @@ const HeaderAuth = ({screen, isBack = false, email = ''}: Props) => {
   switch (screen) {
     case 'login':
       img = LoginGenie;
-      title = 'Welcome back!';
+      title = localize('login-screen.title');
       break;
     case 'signup':
       img = SignUpGenie;
-      title = 'Create an account';
+      title = localize('sign-up-screen.title');
       break;
     case 'reset':
       img = ResetGenie;
-      title = 'Password Recovery';
-      text =
-        'Write your email and we will send you a code for resetting to reset your password';
+      title = localize('forgot-password-screen.title');
+      text = localize('forgot-password-screen.desc');
       break;
     case 'email':
       img = Smile;

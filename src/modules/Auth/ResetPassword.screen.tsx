@@ -1,18 +1,19 @@
 import React from 'react';
-
-import ScreenContainer from '../../components/ScreenContainer';
-import {AuthScreenProps} from '../../navigators/types';
-import useTheme from '../../Context/ThemeContext';
-import sizes from '../../utils/sizes';
-import {StyleSheet, View} from 'react-native';
-import {Font14} from '../../uikit/Typography/Font14';
-import Button from '../../uikit/Button';
-import {ControllerTextInput} from '../../uikit/TextInput';
 import {useForm} from 'react-hook-form';
+import {StyleSheet, View} from 'react-native';
+
+import HeaderAuth from './components/HeaderAuth';
 import Line from './components/Line';
 import SocialButton from './components/SocialButton';
+import ScreenContainer from '../../components/ScreenContainer';
+import useTheme from '../../Context/ThemeContext';
+import {localize} from '../../localization/utils';
+import type {AuthScreenProps} from '../../navigators/types';
 import Social from '../../typings/Social';
-import HeaderAuth from './components/HeaderAuth';
+import Button from '../../uikit/Button';
+import {ControllerTextInput} from '../../uikit/TextInput';
+import {Font14} from '../../uikit/Typography/Font14';
+import sizes from '../../utils/sizes';
 
 const ResetPasswordScreen = ({
   navigation,
@@ -36,16 +37,16 @@ const ResetPasswordScreen = ({
       <ControllerTextInput
         control={control}
         name="email"
-        placeholder="Email"
+        placeholder={localize('input.email.placeholder')}
         errors={errors}
         outerStyle={{
           marginBottom: sizes[16],
         }}
         rules={{
-          required: 'Email is required',
+          required: localize('input.email.required'),
           pattern: {
             value: /^[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/,
-            message: 'Invalid email',
+            message: localize('input.email.invalid'),
           },
         }}
       />
@@ -54,7 +55,7 @@ const ResetPasswordScreen = ({
         style={{
           marginBottom: sizes[16],
         }}>
-        Continue
+        {localize('button.continue')}
       </Button>
     </ScreenContainer>
   );

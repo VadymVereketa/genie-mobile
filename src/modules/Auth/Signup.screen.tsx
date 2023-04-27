@@ -9,6 +9,7 @@ import FigmaIcon from '../../components/FigmaIcon/FigmaIcon';
 import ScreenContainer from '../../components/ScreenContainer';
 import useTheme from '../../Context/ThemeContext';
 import {useRules} from '../../hooks/useRules';
+import {localize} from '../../localization/utils';
 import type {AuthScreenProps} from '../../navigators/types';
 import {useAppDispatch, useAppSelector} from '../../redux/hooks';
 import {fetchCreateUser, UserSelector} from '../../redux/slices/userSlice';
@@ -99,14 +100,17 @@ const SignUpScreen = ({navigation}: AuthScreenProps<'SignUpScreen'>) => {
           checked={isTermsChecked}
           onChange={setIsTermsChecked}
         />
-        <Font14.W400>
-          I agree to the{' '}
+        <Font14.W400
+          style={{
+            flex: 1,
+          }}>
+          {localize('sign-up-screen.terms.text1')}
           <Font14.W400 color="primary" textDecorationLine="underline">
-            Terms & Conditions
-          </Font14.W400>{' '}
-          and{' '}
+            {localize('sign-up-screen.terms.text2')}
+          </Font14.W400>
+          {localize('sign-up-screen.terms.text3')}
           <Font14.W400 color="primary" textDecorationLine="underline">
-            Privacy Policy
+            {localize('sign-up-screen.terms.text4')}
           </Font14.W400>
         </Font14.W400>
       </View>
@@ -122,10 +126,10 @@ const SignUpScreen = ({navigation}: AuthScreenProps<'SignUpScreen'>) => {
           checked={isNewsChecked}
           onChange={setIsNewsChecked}
         />
-        <Font14.W400>I want to receive the news and special offers</Font14.W400>
+        <Font14.W400>{localize('sign-up-screen.want-receive')}</Font14.W400>
       </View>
       <Button disabled={!isTermsChecked} onPress={handleSubmit(onSubmit)}>
-        Sign up
+        {localize('sign-up-screen.sign-up')}
       </Button>
       {!!error && <Font14.W400 color="error">{error}</Font14.W400>}
       <Line />
@@ -153,8 +157,11 @@ const SignUpScreen = ({navigation}: AuthScreenProps<'SignUpScreen'>) => {
           justifyContent: 'flex-end',
         }}>
         <Font14.W400 textAlign="center">
-          Already have an account?{' '}
-          <Font14.W600 onPress={navigateToLogin}> Log in</Font14.W600>
+          {localize('sign-up-screen.already-have-account')}{' '}
+          <Font14.W600 onPress={navigateToLogin}>
+            {' '}
+            {localize('welcome-screen.login')}
+          </Font14.W600>
         </Font14.W400>
       </View>
     </ScreenContainer>

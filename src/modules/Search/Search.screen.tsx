@@ -10,6 +10,7 @@ import Header from '../../components/Header';
 import ScreenContainer from '../../components/ScreenContainer';
 import useTheme from '../../Context/ThemeContext';
 import type {SearchScreenProps} from '../../navigators/types';
+import Button from '../../uikit/Button';
 import IconButton from '../../uikit/IconButton';
 import TagButton from '../../uikit/TagButton';
 import type {TextInputInterface} from '../../uikit/TextInput';

@@ -3,6 +3,7 @@ import {Image, StyleSheet, View} from 'react-native';
 
 import DefaultImage from '../../../assets/defaultImg';
 import useTheme from '../../../Context/ThemeContext';
+import {localize} from '../../../localization/utils';
 import {useAppNavigation} from '../../../navigators/hooks';
 import Button from '../../../uikit/Button';
 import {Font12} from '../../../uikit/Typography/Font12';
@@ -33,13 +34,13 @@ const AddGalleryItem = () => {
       </View>
       <View style={styles.view}>
         <Font12.W600 style={styles.text}>
-          Share new photos with the community
+          {localize('gallery-community-screen.share-photo')}
         </Font12.W600>
         <Button
           onPress={() => {
             navigation.navigate('AddPhotoScreen');
           }}>
-          Add photo
+          {localize('button.add-photo')}
         </Button>
       </View>
     </View>

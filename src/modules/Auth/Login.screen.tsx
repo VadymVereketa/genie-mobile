@@ -8,6 +8,7 @@ import SocialButton from './components/SocialButton';
 import ScreenContainer from '../../components/ScreenContainer';
 import useTheme from '../../Context/ThemeContext';
 import {useRules} from '../../hooks/useRules';
+import {localize} from '../../localization/utils';
 import type {AuthScreenProps} from '../../navigators/types';
 import {useAppDispatch, useAppSelector} from '../../redux/hooks';
 import {
@@ -80,7 +81,7 @@ const LoginScreen = ({navigation}: AuthScreenProps<'LoginScreen'>) => {
         style={{
           marginBottom: sizes[16],
         }}>
-        Log in
+        {localize('welcome-screen.login')}
       </Button>
       {!!error && (
         <Font14.W400
@@ -92,7 +93,7 @@ const LoginScreen = ({navigation}: AuthScreenProps<'LoginScreen'>) => {
         </Font14.W400>
       )}
       <Font14.W400 onPress={navigateToForgotPassword}>
-        Forgot password?
+        {localize('login-screen.forgot-password')}
       </Font14.W400>
       <Line />
       <View
@@ -119,8 +120,11 @@ const LoginScreen = ({navigation}: AuthScreenProps<'LoginScreen'>) => {
           justifyContent: 'flex-end',
         }}>
         <Font14.W400 textAlign="center">
-          Don’t have an account?{' '}
-          <Font14.W600 onPress={navigateToSignUp}> Sign up</Font14.W600>
+          {localize('welcome-screen.dont-have-account')}{' '}
+          <Font14.W600 onPress={navigateToSignUp}>
+            {' '}
+            {localize('welcome-screen.sign-up')}
+          </Font14.W600>
         </Font14.W400>
       </View>
     </ScreenContainer>

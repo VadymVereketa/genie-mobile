@@ -1,8 +1,13 @@
-import React from 'react';
+import type React from 'react';
 import {StyleSheet} from 'react-native';
+import type {
+  StyleProp,
+  TextStyle,
+  TouchableOpacityProps,
+} from 'react-native/types';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import {GenericTouchableProps} from 'react-native-gesture-handler/lib/typescript/components/touchables/GenericTouchable';
-import {StyleProp, TextStyle, TouchableOpacityProps} from 'react-native/types';
+import type {GenericTouchableProps} from 'react-native-gesture-handler/lib/typescript/components/touchables/GenericTouchable';
+
 import {Font14} from './Typography/Font14';
 import useTheme from '../Context/ThemeContext';
 import sizes from '../utils/sizes';
@@ -48,6 +53,7 @@ const Button = ({
         styles.style,
         style,
       ]}
+      accessibilityLabel={typeof children === 'string' ? children : 'Button'}
       containerStyle={containerStyle}
       {...props}>
       {typeof children === 'string' ? (
@@ -73,7 +79,7 @@ const styles = StyleSheet.create({
     borderRadius: sizes[8],
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: sizes[12],
+    paddingVertical: sizes[16],
   },
 });
 export default Button;

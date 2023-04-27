@@ -29,6 +29,7 @@ const TabNavigator = React.memo(() => {
 
   return (
     <Tab.Navigator
+      detachInactiveScreens
       initialRouteName={'CommunityNavigator'}
       tabBar={tabBar}
       screenOptions={{
@@ -60,6 +61,7 @@ const TabNavigator = React.memo(() => {
         component={CommunityNavigator}
         options={{
           title: 'Community',
+          unmountOnBlur: true,
         }}
       />
       <Tab.Screen

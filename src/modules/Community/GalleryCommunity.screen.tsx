@@ -24,6 +24,7 @@ import ImageSlider from '../../components/ImageSlider';
 import ScreenContainer from '../../components/ScreenContainer';
 import useTheme from '../../Context/ThemeContext';
 import {sortOptions} from '../../data/sortOptions';
+import {localize} from '../../localization/utils';
 import type {CommunityScreenProps} from '../../navigators/types';
 import {ControllerTextInput} from '../../uikit/TextInput';
 import {Font14} from '../../uikit/Typography/Font14';
@@ -52,7 +53,11 @@ const GalleryCommunityScreen = ({
   const newPoint = {...point, y: point.y - refY.current};
   return (
     <ScreenContainer style={styles.con}>
-      <Header isBack title="Gallery" rightView={<HeaderRight />} />
+      <Header
+        isBack
+        title={localize('titles.gallery')}
+        rightView={<HeaderRight />}
+      />
       <ScrollView
         onScroll={e => {
           console.log(e.nativeEvent.contentOffset.y);
@@ -61,21 +66,21 @@ const GalleryCommunityScreen = ({
         scrollEventThrottle={16}
         nestedScrollEnabled>
         <Font20.W600 textAlign="center" style={styles.text}>
-          See it in real life
+          {localize('gallery-community-screen.title')}
         </Font20.W600>
         <Font14.W400 textAlign="center" color={'textLight'}>
-          See and be seen. Post and browse photos and videos from members.
+          {localize('gallery-community-screen.desc')}
         </Font14.W400>
         <ControllerTextInput
           control={control}
           name="search"
-          placeholder="Search photos"
+          placeholder={localize('input.search.placeholder-photos')}
           errors={errors}
           outerStyle={styles.textInput}
           iconRight="Search"
         />
         <Font14.W600 style={styles.text2}>
-          Mention @genie on Instagram for a chance to be featured
+          {localize('gallery-community-screen.mention')}
         </Font14.W600>
         <ImageSlider images={[DefaultImage, DefaultImage, DefaultImage]} />
         <View
@@ -90,7 +95,9 @@ const GalleryCommunityScreen = ({
               navigation.navigate('FilterScreen');
             }}
             style={styles.touchable}>
-            <Font14.W400 style={styles.text3}>Filter</Font14.W400>
+            <Font14.W400 style={styles.text3}>
+              {localize('common.filter')}
+            </Font14.W400>
             <FigmaIcon name="ArrowDown" size={sizes[14]} fill="transparent" />
           </TouchableOpacity>
           <TouchableOpacity
@@ -100,7 +107,7 @@ const GalleryCommunityScreen = ({
             onLayout={onLayout}
             style={styles.touchable}>
             <Font14.W400 style={styles.text3}>
-              Sort by: {sort.label}
+              {localize('common.sort-by')}: {sort.title}
             </Font14.W400>
             <FigmaIcon name="ArrowDown" size={sizes[14]} fill="transparent" />
           </TouchableOpacity>

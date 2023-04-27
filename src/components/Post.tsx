@@ -1,15 +1,18 @@
 import React, {useEffect} from 'react';
-import {Image, Keyboard, StyleProp, View, ViewStyle} from 'react-native';
-import DefaultImage from '../assets/defaultImg';
-import sizes from '../utils/sizes';
-import {Font14} from '../uikit/Typography/Font14';
-import {Font12} from '../uikit/Typography/Font12';
-import {formatDate} from '../utils/formatDate';
-import useTheme from '../Context/ThemeContext';
-import FigmaIcon from './FigmaIcon/FigmaIcon';
+import type {StyleProp, ViewStyle} from 'react-native';
+import {Image, Keyboard, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+
+import FigmaIcon from './FigmaIcon/FigmaIcon';
+import DefaultImage from '../assets/defaultImg';
+import useTheme from '../Context/ThemeContext';
+import {localize} from '../localization/utils';
 import IconButton from '../uikit/IconButton';
 import TextInput from '../uikit/TextInput';
+import {Font12} from '../uikit/Typography/Font12';
+import {Font14} from '../uikit/Typography/Font14';
+import {formatDate} from '../utils/formatDate';
+import sizes from '../utils/sizes';
 
 type Props = {
   style?: StyleProp<ViewStyle>;
@@ -81,7 +84,9 @@ const Post = ({style}: Props) => {
           flexDirection: 'row',
           marginVertical: sizes[8],
         }}>
-        <Font12.W400 color="textLight">2 Likes</Font12.W400>
+        <Font12.W400 color="textLight">
+          2 {localize('common.likes')}
+        </Font12.W400>
         <View
           style={{
             borderLeftWidth: 1,
@@ -99,7 +104,10 @@ const Post = ({style}: Props) => {
               flexDirection: 'row',
             }}>
             <FigmaIcon name="Replay" size={sizes[14]} />
-            <Font12.W400 color="textLight"> Replay</Font12.W400>
+            <Font12.W400 color="textLight">
+              {' '}
+              {localize('common.replay')}
+            </Font12.W400>
           </TouchableOpacity>
         </View>
         <Font12.W400
@@ -107,7 +115,7 @@ const Post = ({style}: Props) => {
             flexGrow: 1,
           }}
           color="textLight">
-          124 Replies
+          124 {localize('common.replies')}
         </Font12.W400>
         <IconButton iconName="Like" size={sizes[20]} fill="transparent" />
       </View>

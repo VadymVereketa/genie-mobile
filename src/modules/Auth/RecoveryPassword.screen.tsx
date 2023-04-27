@@ -1,14 +1,14 @@
 import React from 'react';
-
-import ScreenContainer from '../../components/ScreenContainer';
-import {AuthScreenProps} from '../../navigators/types';
-import useTheme from '../../Context/ThemeContext';
-import sizes from '../../utils/sizes';
+import {useForm} from 'react-hook-form';
 import {StyleSheet} from 'react-native';
+
+import HeaderAuth from './components/HeaderAuth';
+import ScreenContainer from '../../components/ScreenContainer';
+import useTheme from '../../Context/ThemeContext';
+import type {AuthScreenProps} from '../../navigators/types';
 import Button from '../../uikit/Button';
 import {ControllerTextInput} from '../../uikit/TextInput';
-import {useForm} from 'react-hook-form';
-import HeaderAuth from './components/HeaderAuth';
+import sizes from '../../utils/sizes';
 
 const RecoveryPasswordScreen = ({
   navigation,
