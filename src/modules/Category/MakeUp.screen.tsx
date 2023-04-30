@@ -11,6 +11,7 @@ import useTheme from '../../Context/ThemeContext';
 import {CategoryNavigatorParamList} from '../../navigators/Category.navigator';
 import type {CategoryScreenProps} from '../../navigators/types';
 import {Font16} from '../../uikit/Typography/Font16';
+import {responsiveWidth} from '../../utils/responsive-dimensions';
 import sizes from '../../utils/sizes';
 
 const MakeUpScreen = ({
@@ -80,6 +81,7 @@ const styles = StyleSheet.create({
   },
   containerStyle: {
     flexGrow: 1,
+    width: responsiveWidth(50) - sizes[32],
     marginHorizontal: sizes[5],
     marginBottom: sizes[10],
   },

@@ -13,7 +13,7 @@ const Service = {
     try {
       const res = await instance.post<ResponseCreateUser>('user', user);
 
-      return res.data.ok;
+      return res.data;
     } catch (e) {
       throw new Error(e?.response?.data?.error || 'Server error');
     }
@@ -22,17 +22,21 @@ const Service = {
     try {
       const res = await instance.post<ResponseCreateUser>('login', user);
 
-      return res.data.ok;
+      return res.data;
     } catch (e) {
+      console.log(e);
+
       throw new Error(e?.response?.data?.error || 'Server error');
     }
   },
 
   refresh: async (id: string) => {
     try {
-      const res = await instance.get<ResponseCreateUser>('user/' + id);
+      const res = await instance.get<{
+        ok: ResponseCreateUser['userProfile'];
+      }>('user/' + id);
 
-      console.log(res);
+      console.log('refresh', res);
 
       return res.data.ok;
     } catch (e) {
@@ -44,12 +48,10 @@ const Service = {
     try {
       console.log('completeOnboarding');
 
-      const res = await instance.put<ResponseCreateUser>(
-        `user/${id}/complete_onboarding`,
-      );
-      console.log(res);
+      const res = await instance.put(`user/${id}/complete_onboarding`);
+      console.log('completeOnboarding', res);
 
-      return res.data.ok;
+      return res.data;
     } catch (e) {
       console.log(e);
 

@@ -22,7 +22,12 @@ export type User = {
   completeOnboarding?: boolean;
 };
 export type ResponseCreateUser = {
-  ok: User;
+  userProfile: User;
+  authCredentials: {
+    expiresIn: string;
+    idToken: string;
+    refreshToken: string;
+  };
 };
 
 export type PropertyOfUser =

@@ -2,6 +2,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 
 import MyDetailProfileScreen from '../modules/Community/MyDetailProfile.screen';
+import ChangePasswordScreen from '../modules/Profile/ChangePassword.screen';
 import ProfileScreen from '../modules/Profile/Profile.screen';
 import ProfileEditingScreen from '../modules/Profile/ProfileEditing.screen';
 import SupportScreen from '../modules/Profile/Support.screen';
@@ -12,6 +13,7 @@ export type ProfileNavigatorParamList = {
   ProfileEditingScreen: undefined;
   SupportScreen: undefined;
   MyDetailProfileScreen: undefined;
+  ChangePasswordScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<ProfileNavigatorParamList>();
@@ -24,6 +26,10 @@ const ProfileNavigator = React.memo(() => {
         headerShown: false,
       }}>
       <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+      <Stack.Screen
+        name="ChangePasswordScreen"
+        component={ChangePasswordScreen}
+      />
       <Stack.Screen
         name="ProfileEditingScreen"
         component={ProfileEditingScreen}

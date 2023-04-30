@@ -1,22 +1,26 @@
 import React from 'react';
+import {Image, View} from 'react-native/';
 import {ScrollView} from 'react-native-gesture-handler';
-import {View, Image} from 'react-native/';
+
+import ProfileAvatar from './ProfileAvatar';
+import ProfileInfo from './ProfileInfo';
+import TrendingGroup from './TrendingGroup';
 import DefaultImage from '../../../assets/defaultImg';
 import Post from '../../../components/Post';
 import ViewAll from '../../../components/Views/ViewAll';
 import ViewBorders from '../../../components/Views/ViewBorders';
-import IconButton from '../../../uikit/IconButton';
-import {Font14} from '../../../uikit/Typography/Font14';
-import sizes from '../../../utils/sizes';
-import ProfileAvatar from './ProfileAvatar';
-import TrendingGroup from './TrendingGroup';
 import useTheme from '../../../Context/ThemeContext';
 import {useAppNavigation} from '../../../navigators/hooks';
+import {useAppSelector} from '../../../redux/hooks';
+import {UserSelector} from '../../../redux/slices/userSlice';
 import Button from '../../../uikit/Button';
-import ProfileInfo from './ProfileInfo';
+import IconButton from '../../../uikit/IconButton';
 import SquareButton from '../../../uikit/SquareButton';
+import {Font14} from '../../../uikit/Typography/Font14';
+import sizes from '../../../utils/sizes';
 
 const MyProfileSegment = () => {
+  const user = useAppSelector(UserSelector.getUser);
   const {palette} = useTheme();
   const navigation = useAppNavigation();
 

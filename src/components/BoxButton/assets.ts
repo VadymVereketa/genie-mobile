@@ -1,9 +1,12 @@
 import Acne from './icons/Acne.svg';
 import Aging from './icons/Aging.svg';
+import AntiAging from './icons/AntiAging.svg';
 import Bestseller from './icons/Bestseller.svg';
 import Black from './icons/Black.svg';
+import BrighteningMasks from './icons/BrighteningMasks.svg';
 import Brown from './icons/Brown.svg';
 import Brows from './icons/Brows.svg';
+import ClayAndCharcoalMasks from './icons/ClayAndCharcoalMasks.svg';
 import Clean from './icons/Clean.svg';
 import Cleanser from './icons/Cleanser.svg';
 import Colorful from './icons/Colorful.svg';
@@ -15,11 +18,15 @@ import ConeTaper from './icons/ConeTaper.svg';
 import Contour from './icons/Contour.svg';
 import Cool from './icons/Cool.svg';
 import Cream from './icons/Cream.svg';
+import CreamOut from './icons/CreamOut.svg';
 import Creams from './icons/Creams.svg';
 import CreaseResistant from './icons/CreaseResistant.svg';
 import Curved from './icons/Curved.svg';
+import DarkSpotCorrection from './icons/DarkSpotCorrection.svg';
 import DoubleEyelid from './icons/DoubleEyelid.svg';
 import Dry from './icons/Dry.svg';
+import Exfoliating from './icons/Exfoliating.svg';
+import ExfoliatingMask from './icons/ExfoliatingMask.svg';
 import EyebrowGel from './icons/EyebrowGel.svg';
 import EyebrowPencils from './icons/EyebrowPencils.svg';
 import EyelashesCat from './icons/EyelashesCat.svg';
@@ -34,11 +41,13 @@ import Face from './icons/Face.svg';
 import FacePrimer from './icons/FacePrimer.svg';
 import FacialItching from './icons/FacialItching.svg';
 import FalseEyelashes from './icons/FalseEyelashes.svg';
+import Foam from './icons/Foam.svg';
 import Foundation from './icons/Foundation.svg';
 import Fragrance from './icons/Fragrance.svg';
 import Freckles from './icons/Freckles.svg';
 import Fresh from './icons/Fresh.svg';
 import Full from './icons/Full.svg';
+import Gel from './icons/Gel.svg';
 import Glossy from './icons/Glossy.svg';
 import Highlighter from './icons/Highlighter.svg';
 import HighShine from './icons/HighShine.svg';
@@ -68,12 +77,15 @@ import Mask from './icons/Mask.svg';
 import Matte from './icons/Matte.svg';
 import Mature from './icons/Mature.svg';
 import Medium from './icons/Medium.svg';
+import Micellar from './icons/Micellar.svg';
 import Moisturizer from './icons/Moisturizer.svg';
 import Monolid from './icons/Monolid.svg';
 import Natural from './icons/Natural.svg';
 import Neutral from './icons/Neutral.svg';
 import NowTrending from './icons/NowTrending.svg';
+import Oil from './icons/Oil.svg';
 import OilControl from './icons/OilControl.svg';
+import OilMask from './icons/OilMask.svg';
 import Oily from './icons/Oily.svg';
 import Parabens from './icons/Parabens.svg';
 import Pencil from './icons/Pencil.svg';
@@ -87,8 +99,12 @@ import Satin from './icons/Satin.svg';
 import Sensitive from './icons/Sensitive.svg';
 import Separation from './icons/Separation.svg';
 import Serum from './icons/Serum.svg';
+import SheetMasks from './icons/SheetMasks.svg';
+import SkinBrightening from './icons/SkinBrightening.svg';
 import SkinCare from './icons/SkinCare.svg';
+import SleepMasks from './icons/SleepMasks.svg';
 import SmudgeProof from './icons/SmudgeProof.svg';
+import Soap from './icons/Soap.svg';
 import Stick from './icons/Stick.svg';
 import Sulfates from './icons/Sulfates.svg';
 import Sun from './icons/Sun.svg';
@@ -120,6 +136,22 @@ import WarmTonedNeutrals from './images/WarmTonedNeutrals.png';
 import Ysl from './images/Ysl.png';
 
 export const BoxIcons = {
+  AntiAging,
+  BrighteningMasks,
+  ClayAndCharcoalMasks,
+  CreamOut,
+  DarkSpotCorrection,
+  Exfoliating,
+  ExfoliatingMask,
+  Foam,
+  Gel,
+  Micellar,
+  Oil,
+  OilMask,
+  SheetMasks,
+  SkinBrightening,
+  SleepMasks,
+  Soap,
   Eyeliner,
   FalseEyelashes,
   LashGlue,

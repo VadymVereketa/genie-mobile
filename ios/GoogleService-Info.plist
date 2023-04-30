@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>362195227054-bcjo2ikqad4975fhj2aokl6aun4nbqt7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.362195227054-bcjo2ikqad4975fhj2aokl6aun4nbqt7</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>362195227054-2fg6rprc04bqahqio1v12blbalcu6g0t.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBfM4IirhmMaQF1JxLGwPV-hZQqXujIpzs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>362195227054</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mobile.genie</string>
+	<key>PROJECT_ID</key>
+	<string>genie-b1981</string>
+	<key>STORAGE_BUCKET</key>
+	<string>genie-b1981.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:362195227054:ios:b96b8f0851e1780aaf383f</string>
+</dict>
+</plist>

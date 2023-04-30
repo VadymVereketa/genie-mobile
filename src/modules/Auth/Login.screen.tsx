@@ -8,6 +8,7 @@ import SocialButton from './components/SocialButton';
 import ScreenContainer from '../../components/ScreenContainer';
 import useTheme from '../../Context/ThemeContext';
 import {useRules} from '../../hooks/useRules';
+import useSocialAuth from '../../hooks/useSocialAuth';
 import {localize} from '../../localization/utils';
 import type {AuthScreenProps} from '../../navigators/types';
 import {useAppDispatch, useAppSelector} from '../../redux/hooks';
@@ -27,6 +28,7 @@ const LoginScreen = ({navigation}: AuthScreenProps<'LoginScreen'>) => {
   const {palette} = useTheme();
   const rules = useRules();
   const dispatch = useAppDispatch();
+  const {socialAuth} = useSocialAuth();
   const error = useAppSelector(UserSelector.getLoginError);
   const {
     control,
@@ -70,11 +72,11 @@ const LoginScreen = ({navigation}: AuthScreenProps<'LoginScreen'>) => {
         name="password"
         placeholder="Password"
         secureTextEntry
+        rules={rules.password}
         errors={errors}
         outerStyle={{
           marginBottom: sizes[16],
         }}
-        rules={rules.password}
       />
       <Button
         onPress={handleSubmit(onSubmit)}
@@ -106,6 +108,9 @@ const LoginScreen = ({navigation}: AuthScreenProps<'LoginScreen'>) => {
             width: '48%',
           }}
           social={Social.Google}
+          onPress={() => {
+            socialAuth(Social.Google);
+          }}
         />
         <SocialButton
           containerStyle={{

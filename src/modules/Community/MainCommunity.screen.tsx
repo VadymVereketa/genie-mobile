@@ -13,6 +13,8 @@ import ScreenContainer from '../../components/ScreenContainer';
 import useTheme from '../../Context/ThemeContext';
 import {localize} from '../../localization/utils';
 import type {CommunityScreenProps} from '../../navigators/types';
+import {useAppSelector} from '../../redux/hooks';
+import {UserSelector} from '../../redux/slices/userSlice';
 import Button from '../../uikit/Button';
 import IconButton from '../../uikit/IconButton';
 import {ControllerTextInput} from '../../uikit/TextInput';
@@ -28,6 +30,7 @@ const MainCommunityScreen = ({
   const {palette} = useTheme();
   const [point, onLayout] = usePointDropdown();
   const [isShowMenu, setIsShowMenu] = React.useState(false);
+  const user = useAppSelector(UserSelector.getUser);
 
   const {
     control,
@@ -92,7 +95,7 @@ const MainCommunityScreen = ({
           style={{
             flexGrow: 1,
           }}>
-          <Font14.W600>username</Font14.W600>
+          <Font14.W600>{user?.fullName}</Font14.W600>
           <Font12.W400 color="textLight">
             {localize('main-community-screen.profile')}
           </Font12.W400>

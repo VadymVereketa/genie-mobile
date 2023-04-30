@@ -1,15 +1,16 @@
+import type {ReactNode} from 'react';
 import React, {
   createContext,
-  ReactNode,
   useCallback,
   useContext,
   useMemo,
   useState,
 } from 'react';
 import {Appearance} from 'react-native';
-import {Theme} from '../typings/Theme';
-import {lightTheme} from '../themes/light';
+
 import {darkTheme} from '../themes/dark';
+import {lightTheme} from '../themes/light';
+import type {Theme} from '../typings/Theme';
 
 type ThemeMode = 'auto' | 'light' | 'dark';
 

@@ -13,24 +13,30 @@ import {PersistGate} from 'redux-persist/integration/react';
 
 import App from './App';
 import {name as appName} from './app.json';
+import configGoogleAuth from './src/config/configGoogleAuth';
+import {AxiosProvider} from './src/Context/AxiosContext';
 import {ThemeProvider} from './src/Context/ThemeContext';
 import {persistor, store} from './src/redux/store';
+
+configGoogleAuth();
 
 const Main = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <GestureHandlerRootView
-          style={{
-            flexGrow: 1,
-          }}>
-          <SafeAreaProvider>
-            <ThemeProvider>
-              <StatusBar translucent={true} hidden />
-              <App />
-            </ThemeProvider>
-          </SafeAreaProvider>
-        </GestureHandlerRootView>
+        <AxiosProvider>
+          <GestureHandlerRootView
+            style={{
+              flexGrow: 1,
+            }}>
+            <SafeAreaProvider>
+              <ThemeProvider>
+                <StatusBar translucent={true} hidden />
+                <App />
+              </ThemeProvider>
+            </SafeAreaProvider>
+          </GestureHandlerRootView>
+        </AxiosProvider>
       </PersistGate>
     </Provider>
   );

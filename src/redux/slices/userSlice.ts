@@ -6,13 +6,14 @@ import Service from '../../services/service/service';
 import type {
   CreateUser,
   LoginUser,
+  ResponseCreateUser,
   UpdatePropertyOfUser,
   User,
 } from '../../typings/CreateUser';
 import type {RootState} from '../store';
 
 export interface UserState {
-  user: User | null;
+  user: ResponseCreateUser | null;
   error: string | null | undefined;
   loginError: string | null | undefined;
   dateOfBirth: string | null;
@@ -40,7 +41,7 @@ const fillQuestions = (user: User, dispatch: any) => {
     likedBrands,
   } = user;
 
-  if (budget !== undefined) {
+  if (budget) {
     dispatch(
       QuestionsActions.setData({
         data: profileSettings1[0].options.find(opt => opt.id === +budget)!,
@@ -143,11 +144,14 @@ export const fetchUser = createAsyncThunk(
   'user/fetchUser',
   async (_: void, thunkAPI) => {
     const root: RootState = thunkAPI.getState() as RootState;
-    if (!root.user.user?.userID) return;
+    const userId = UserSelector.getUserId(root);
+    if (!userId) return;
 
-    const res = await Service.refresh(root.user.user?.userID);
+    const res = await Service.refresh(userId);
+    console.log(res);
+
     fillQuestions(res, thunkAPI.dispatch);
-    thunkAPI.dispatch(UserActions.setUser(res));
+    thunkAPI.dispatch(UserActions.setProfileUser(res));
   },
 );
 export const fetchCreateUser = createAsyncThunk(
@@ -156,7 +160,9 @@ export const fetchCreateUser = createAsyncThunk(
     thunkAPI.dispatch(UserActions.setError(null));
     const res = await Service.createUser(user);
 
-    return res;
+    console.log(res);
+    thunkAPI.dispatch(fetchLoginUser(user));
+    return null;
   },
 );
 
@@ -165,7 +171,9 @@ export const fetchLoginUser = createAsyncThunk(
   async (user: LoginUser, thunkAPI) => {
     thunkAPI.dispatch(UserActions.setError(null));
     const res = await Service.login(user);
-    fillQuestions(res, thunkAPI.dispatch);
+    console.log('res', res);
+
+    fillQuestions(res.userProfile, thunkAPI.dispatch);
     return res;
   },
 );
@@ -174,10 +182,8 @@ export const fetchDateOfBirth = createAsyncThunk(
   'user/fetchDateOfBirth',
   async (data: UpdatePropertyOfUser, thunkAPI) => {
     const root: RootState = thunkAPI.getState() as RootState;
-    const res = await Service.updatePropertyOfUser(
-      root.user.user?.userID,
-      data,
-    );
+    const userId = UserSelector.getUserId(root);
+    const res = await Service.updatePropertyOfUser(userId, data);
     thunkAPI.dispatch(UserActions.setDateOfBirth(data.value));
 
     console.log(res);
@@ -188,10 +194,8 @@ export const fetchPropertyOfUser = createAsyncThunk(
   'user/fetchPropertyOfUser',
   async (data: UpdatePropertyOfUser, thunkAPI) => {
     const root: RootState = thunkAPI.getState() as RootState;
-    const res = await Service.updatePropertyOfUser(
-      root.user.user?.userID,
-      data,
-    );
+    const userId = UserSelector.getUserId(root);
+    const res = await Service.updatePropertyOfUser(userId, data);
     //thunkAPI.dispatch(UserActions.setDateOfBirth(data.value));
 
     console.log(res);
@@ -213,6 +217,11 @@ export const userSlice = createSlice({
     setUser: (state, action) => {
       state.user = action.payload;
     },
+    setProfileUser: (state, action) => {
+      if (state.user) {
+        state.user.userProfile = action.payload;
+      }
+    },
     setError: (state, action) => {
       state.error = action.payload;
       state.loginError = action.payload;
@@ -226,10 +235,14 @@ export const userSlice = createSlice({
       state.error = null;
     },
     setFullName: (state, action) => {
-      state.user!.fullName = action.payload;
+      if (state.user) {
+        state.user.userProfile.fullName = action.payload;
+      }
     },
     setEmail: (state, action) => {
-      state.user!.email = action.payload;
+      if (state.user) {
+        state.user.userProfile.email = action.payload;
+      }
     },
   },
   extraReducers: builder => {
@@ -250,8 +263,13 @@ export const userSlice = createSlice({
 
 export const UserActions = userSlice.actions;
 export class UserSelector {
-  static isAuth = (state: RootState) => state.user.user !== null;
-  static getUser = (state: RootState) => state.user.user;
+  static getTokenId = (state: RootState) =>
+    state.user.user?.authCredentials?.idToken ?? null;
+  static getUserId = (state: RootState) =>
+    state.user.user?.userProfile?.userID ?? null;
+
+  static isAuth = (state: RootState) => !!state.user.user?.userProfile?.userID;
+  static getUser = (state: RootState) => state.user.user?.userProfile;
   static getError = (state: RootState) => state.user.error;
   static getLoginError = (state: RootState) => state.user.loginError;
   static getDateOfBirth = (state: RootState) => {
@@ -262,7 +280,7 @@ export class UserSelector {
     return null;
   };
   static getCompleteOnboarding = (state: RootState) => {
-    return state.user.user?.completeOnboarding ?? false;
+    return state.user.user?.userProfile?.completeOnboarding ?? false;
   };
 }
 

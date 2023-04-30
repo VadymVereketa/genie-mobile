@@ -1,0 +1,12 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="18" cy="18" r="15" stroke="currentColor" stroke-width="2"/>
+<circle cx="17.9998" cy="31.3324" r="1.33333" fill="currentColor"/>
+<circle cx="17.9998" cy="4.66634" r="1.33333" fill="currentColor"/>
+<circle cx="31.3333" cy="17.9997" r="1.33333" transform="rotate(-90 31.3333 17.9997)" fill="currentColor"/>
+<circle cx="4.66683" cy="17.9997" r="1.33333" transform="rotate(-90 4.66683 17.9997)" fill="currentColor"/>
+<circle cx="27.4282" cy="8.57239" r="1.33333" transform="rotate(-135 27.4282 8.57239)" fill="currentColor"/>
+<circle cx="8.57178" cy="27.4288" r="1.33333" transform="rotate(-135 8.57178 27.4288)" fill="currentColor"/>
+<circle cx="27.4281" cy="27.4287" r="1.33333" transform="rotate(-45 27.4281 27.4287)" fill="currentColor"/>
+<circle cx="8.57165" cy="8.57227" r="1.33333" transform="rotate(-45 8.57165 8.57227)" fill="currentColor"/>
+<path d="M18.0002 5.33398V18.0007H9.3335" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

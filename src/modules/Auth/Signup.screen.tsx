@@ -55,7 +55,7 @@ const SignUpScreen = ({navigation}: AuthScreenProps<'SignUpScreen'>) => {
   };
 
   return (
-    <ScreenContainer style={styles.con}>
+    <ScreenContainer scrollable style={styles.con}>
       <HeaderAuth screen="signup" />
       <ControllerTextInput
         control={control}

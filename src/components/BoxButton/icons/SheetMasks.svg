@@ -1,0 +1,29 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M32.569 18C32.569 26.8367 27.4282 34 18.2845 34C9.14083 34 4 26.8367 4 18C4 9.16331 10.395 2 18.2845 2C26.174 2 32.569 9.16331 32.569 18Z" fill="#FFFEFE" stroke="currentColor" stroke-miterlimit="10"/>
+<mask id="mask0_570_23017" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="3" y="1" width="31" height="34">
+<path d="M32.569 18C32.569 26.8367 27.4282 34 18.2845 34C9.14083 34 4 26.8367 4 18C4 9.16331 10.395 2 18.2845 2C26.174 2 32.569 9.16331 32.569 18Z" fill="#B9BCFF" stroke="#3048EA" stroke-miterlimit="10"/>
+</mask>
+<g mask="url(#mask0_570_23017)">
+<line x1="8.39748" y1="-4.30334" x2="37.3975" y2="33.6967" stroke="#FFFEFE"/>
+<line x1="-1.60252" y1="3.69666" x2="27.3975" y2="41.6967" stroke="#FFFEFE"/>
+<line x1="-7.60252" y1="6.69666" x2="21.3975" y2="44.6967" stroke="#FFFEFE"/>
+<line x1="13.3975" y1="-8.30334" x2="42.3975" y2="29.6967" stroke="#FFFEFE"/>
+<line x1="3.39748" y1="-0.303337" x2="32.3975" y2="37.6967" stroke="#FFFEFE"/>
+<line x1="36.7997" y1="4.28882" x2="7.60025" y2="42.1358" stroke="#FFFEFE"/>
+<line x1="26.4843" y1="-3.30005" x2="-2.71518" y2="34.5469" stroke="#FFFEFE"/>
+<line x1="22.0336" y1="-8.31958" x2="-7.16586" y2="29.5274" stroke="#FFFEFE"/>
+<line x1="41.9574" y1="8.08277" x2="12.758" y2="45.9297" stroke="#FFFEFE"/>
+<line x1="31.642" y1="0.493899" x2="2.44254" y2="38.3409" stroke="#FFFEFE"/>
+</g>
+<path d="M15.396 25.0779C15.9553 25.2911 17.1666 25.723 18.2853 25.7026C20.0511 25.6703 21.0206 24.7861 21.5784 24.4297" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round"/>
+<circle cx="12" cy="16" r="3.5" fill="#FFFEFE" stroke="currentColor"/>
+<circle cx="12.0002" cy="14.1814" r="0.727273" fill="currentColor"/>
+<circle cx="12.0002" cy="17.8171" r="0.727273" fill="currentColor"/>
+<circle cx="13.8181" cy="15.9997" r="0.727273" transform="rotate(90 13.8181 15.9997)" fill="currentColor"/>
+<circle cx="10.1819" cy="15.9997" r="0.727273" transform="rotate(90 10.1819 15.9997)" fill="currentColor"/>
+<circle cx="23.6362" cy="16" r="3.5" fill="#FFFEFE" stroke="currentColor"/>
+<circle cx="23.6355" cy="14.1814" r="0.727273" fill="currentColor"/>
+<circle cx="23.6355" cy="17.8171" r="0.727273" fill="currentColor"/>
+<circle cx="25.4539" cy="15.9997" r="0.727273" transform="rotate(90 25.4539 15.9997)" fill="currentColor"/>
+<circle cx="21.8181" cy="15.9997" r="0.727273" transform="rotate(90 21.8181 15.9997)" fill="currentColor"/>
+</svg>

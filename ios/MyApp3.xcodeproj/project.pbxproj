@@ -17,6 +17,7 @@
 		5D80A420585A4308972B2CA0 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B332A1CFF3394456898B4354 /* Poppins-ExtraBold.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-MyApp3-MyApp3Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-MyApp3-MyApp3Tests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A242158529FC51D50004577B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A242158429FC51D50004577B /* GoogleService-Info.plist */; };
 		B17D7EEE1D424D0DBB09D073 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 653BF545BC4748068B58464D /* Poppins-SemiBold.ttf */; };
 		B7BBE691285E4A00AD6D54E0 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40510A8149164315AB33A225 /* Poppins-Bold.ttf */; };
 		C8161CE140D747A3AD67F0F8 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39CB8FBDDA214576A043A06B /* Poppins-Medium.ttf */; };
@@ -59,6 +60,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MyApp3/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-MyApp3-MyApp3Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp3-MyApp3Tests.release.xcconfig"; path = "Target Support Files/Pods-MyApp3-MyApp3Tests/Pods-MyApp3-MyApp3Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9B766FE45B404920B8B8A652 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		A242158429FC51D50004577B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A24538A929F9F22C000A0E93 /* MyApp3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = MyApp3.entitlements; path = MyApp3/MyApp3.entitlements; sourceTree = "<group>"; };
 		B332A1CFF3394456898B4354 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBold.ttf"; path = "../assets/fonts/Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -105,6 +107,7 @@
 		13B07FAE1A68108700A75B9A /* MyApp3 */ = {
 			isa = PBXGroup;
 			children = (
+				A242158429FC51D50004577B /* GoogleService-Info.plist */,
 				A24538A929F9F22C000A0E93 /* MyApp3.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -285,6 +288,7 @@
 				FD58AA89A3234693B45CE4D5 /* Poppins-Black.ttf in Resources */,
 				B7BBE691285E4A00AD6D54E0 /* Poppins-Bold.ttf in Resources */,
 				5D80A420585A4308972B2CA0 /* Poppins-ExtraBold.ttf in Resources */,
+				A242158529FC51D50004577B /* GoogleService-Info.plist in Resources */,
 				298E0AC4922A48318B9BF1F9 /* Poppins-ExtraLight.ttf in Resources */,
 				FFED18517A0A4854B7120D1F /* Poppins-Light.ttf in Resources */,
 				C8161CE140D747A3AD67F0F8 /* Poppins-Medium.ttf in Resources */,
@@ -493,6 +497,7 @@
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-MyApp3-MyApp3Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEAD_CODE_STRIPPING = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -504,11 +509,17 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(SDKROOT)/System/iOSSupport/usr/lib/swift",
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
 					"$(inherited)",
 				);
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyApp3.app/MyApp3";
@@ -521,6 +532,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = MyApp3Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -528,11 +540,17 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(SDKROOT)/System/iOSSupport/usr/lib/swift",
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
 					"$(inherited)",
 				);
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyApp3.app/MyApp3";
@@ -547,27 +565,35 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MyApp3/MyApp3.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 82FHG32Q5H;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				INFOPLIST_FILE = MyApp3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Genie Shop";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.008;
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(SDKROOT)/System/iOSSupport/usr/lib/swift",
+					"$(inherited)",
+				);
+				MARKETING_VERSION = 0.0.012;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobile.genie;
 				PRODUCT_NAME = MyApp3;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -583,16 +609,23 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MyApp3/MyApp3.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 82FHG32Q5H;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				INFOPLIST_FILE = MyApp3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Genie Shop";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.008;
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(SDKROOT)/System/iOSSupport/usr/lib/swift",
+					"$(inherited)",
+				);
+				MARKETING_VERSION = 0.0.012;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.modulemap\"",
@@ -627,11 +660,12 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobile.genie;
 				PRODUCT_NAME = MyApp3;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";

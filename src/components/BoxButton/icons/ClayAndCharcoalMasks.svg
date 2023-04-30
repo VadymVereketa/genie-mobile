@@ -1,0 +1,14 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M32.569 18C32.569 26.8367 27.4282 34 18.2845 34C9.14083 34 4 26.8367 4 18C4 9.16331 10.395 2 18.2845 2C26.174 2 32.569 9.16331 32.569 18Z"  stroke="currentColor" stroke-miterlimit="10"/>
+<path d="M15.396 25.0779C15.9553 25.2911 17.1666 25.723 18.2853 25.7026C20.0511 25.6703 21.0206 24.7861 21.5784 24.4297" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round"/>
+<circle cx="12" cy="16" r="3.5"  stroke="currentColor"/>
+<circle cx="12.0002" cy="14.1814" r="0.727273" fill="currentColor"/>
+<circle cx="12.0002" cy="17.8171" r="0.727273" fill="currentColor"/>
+<circle cx="13.8181" cy="15.9997" r="0.727273" transform="rotate(90 13.8181 15.9997)" fill="currentColor"/>
+<circle cx="10.1819" cy="15.9997" r="0.727273" transform="rotate(90 10.1819 15.9997)" fill="currentColor"/>
+<circle cx="23.6362" cy="16" r="3.5"  stroke="currentColor"/>
+<circle cx="23.6355" cy="14.1814" r="0.727273" fill="currentColor"/>
+<circle cx="23.6355" cy="17.8171" r="0.727273" fill="currentColor"/>
+<circle cx="25.4539" cy="15.9997" r="0.727273" transform="rotate(90 25.4539 15.9997)" fill="currentColor"/>
+<circle cx="21.8181" cy="15.9997" r="0.727273" transform="rotate(90 21.8181 15.9997)" fill="currentColor"/>
+</svg>

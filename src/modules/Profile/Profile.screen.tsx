@@ -8,8 +8,8 @@ import Header from '../../components/Header';
 import ScreenContainer from '../../components/ScreenContainer';
 import useTheme from '../../Context/ThemeContext';
 import type {ProfileScreenProps} from '../../navigators/types';
-import {useAppDispatch} from '../../redux/hooks';
-import {fetchLogout} from '../../redux/slices/userSlice';
+import {useAppDispatch, useAppSelector} from '../../redux/hooks';
+import {fetchLogout, UserSelector} from '../../redux/slices/userSlice';
 import Switch from '../../uikit/Switch';
 import {Font12} from '../../uikit/Typography/Font12';
 import {Font14} from '../../uikit/Typography/Font14';
@@ -18,7 +18,7 @@ import sizes from '../../utils/sizes';
 
 const ProfileScreen = ({navigation}: ProfileScreenProps<'ProfileScreen'>) => {
   const dispatch = useAppDispatch();
-
+  const user = useAppSelector(UserSelector.getUser);
   const {palette} = useTheme();
   const [checked, setChecked] = React.useState(false);
 
@@ -51,8 +51,8 @@ const ProfileScreen = ({navigation}: ProfileScreenProps<'ProfileScreen'>) => {
           <Avatar />
         </View>
         <View>
-          <Font20.W600>Maura Smit</Font20.W600>
-          <Font12.W400 color="textLight">maurasmit@gmail.com</Font12.W400>
+          <Font20.W600>{user?.fullName}</Font20.W600>
+          <Font12.W400 color="textLight">{user?.email}</Font12.W400>
         </View>
       </TouchableOpacity>
       <PressableItem
@@ -72,7 +72,7 @@ const ProfileScreen = ({navigation}: ProfileScreenProps<'ProfileScreen'>) => {
       </View>
       <PressableItem
         onPress={() => {
-          navigation.navigate('ProfileEditingScreen');
+          navigation.navigate('ChangePasswordScreen');
         }}
         title="Change password"
       />

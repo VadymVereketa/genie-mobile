@@ -1,12 +1,16 @@
 import React from 'react';
 import {View} from 'react-native';
+
 import ViewBorders from '../../../components/Views/ViewBorders';
+import useTheme from '../../../Context/ThemeContext';
+import {useAppSelector} from '../../../redux/hooks';
+import {UserSelector} from '../../../redux/slices/userSlice';
 import {Font14} from '../../../uikit/Typography/Font14';
 import sizes from '../../../utils/sizes';
-import useTheme from '../../../Context/ThemeContext';
 
 const ProfileInfo = () => {
   const {palette} = useTheme();
+  const user = useAppSelector(UserSelector.getUser);
 
   return (
     <React.Fragment>
@@ -15,7 +19,7 @@ const ProfileInfo = () => {
         style={{
           marginVertical: sizes[16],
         }}>
-        username
+        {user?.fullName}
       </Font14.W600>
       <ViewBorders
         style={{

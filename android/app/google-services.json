@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "362195227054",
+    "project_id": "genie-b1981",
+    "storage_bucket": "genie-b1981.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362195227054:android:b02346e80b821724af383f",
+        "android_client_info": {
+          "package_name": "com.mobile.genie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362195227054-2fg6rprc04bqahqio1v12blbalcu6g0t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobile.genie",
+            "certificate_hash": "0c75cd2a724fe8781c0bfb0c2672534ada4c5ddd"
+          }
+        },
+        {
+          "client_id": "362195227054-l2l41817b4r9tbu0oj1o1n8aiafu6h1b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobile.genie",
+            "certificate_hash": "e81545fa84d200d82dc67e92a56c4d6566689bb9"
+          }
+        },
+        {
+          "client_id": "362195227054-sifd1hat91l2e7sp2b7eb46fpqs9ulv4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobile.genie",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "362195227054-8gmpuedtll97f6hn168ejqr4tro55oqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMtSvFN2I-8nfyW0gOag_kqZnYj2TQpHA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362195227054-8gmpuedtll97f6hn168ejqr4tro55oqd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "362195227054-bcjo2ikqad4975fhj2aokl6aun4nbqt7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mobile.genie",
+                "app_store_id": "6448447182"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

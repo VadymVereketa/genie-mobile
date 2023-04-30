@@ -1,4 +1,4 @@
-import 'react-native-get-random-values';
+//import 'react-native-get-random-values';
 import auth from '@react-native-firebase/auth';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {useState} from 'react';

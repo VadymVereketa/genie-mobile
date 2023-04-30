@@ -1,34 +1,19 @@
 import React from 'react';
-
-import {Image, StyleSheet, View} from 'react-native';
-import useTheme from '../../Context/ThemeContext';
-import ScreenContainer from '../../components/ScreenContainer';
-import sizes from '../../utils/sizes';
-import {Font20} from '../../uikit/Typography/Font20';
-import {CommunityScreenProps} from '../../navigators/types';
-import Header from '../../components/Header';
-import {ControllerTextInput} from '../../uikit/TextInput';
 import {useForm} from 'react-hook-form';
-import Photo1 from './assets/Phoho1.png';
-import Photo2 from './assets/Phoho2.png';
-import Photo3 from './assets/Ellipse3.png';
-import Photo4 from '../Auth/assets/signup-genie.png';
-import {Font14} from '../../uikit/Typography/Font14';
-import Button from '../../uikit/Button';
-import SegmentControl from '../../components/SegmentControl';
-import {Option} from '../../typings/Option';
-import ProfileAvatar from './components/ProfileAvatar';
-import ViewBorders from '../../components/Views/ViewBorders';
-import IconButton from '../../uikit/IconButton';
-import ViewAll from '../../components/Views/ViewAll';
-import {ScrollView} from 'react-native-gesture-handler';
-import TrendingGroup from './components/TrendingGroup';
-import DefaultImage from '../../assets/defaultImg';
-import Post from '../../components/Post';
-import ProfileSegment from './components/ProfileSegment';
-import MakeUpSegment from './components/MakeUpSegment';
+import {StyleSheet} from 'react-native';
+
 import AchievementSegment from './components/AchievementSegment';
+import MakeUpSegment from './components/MakeUpSegment';
 import MyProfileSegment from './components/MyProfileSegment';
+import Header from '../../components/Header';
+import ScreenContainer from '../../components/ScreenContainer';
+import SegmentControl from '../../components/SegmentControl';
+import useTheme from '../../Context/ThemeContext';
+import type {CommunityScreenProps} from '../../navigators/types';
+import {useAppSelector} from '../../redux/hooks';
+import {UserSelector} from '../../redux/slices/userSlice';
+import type {Option} from '../../typings/Option';
+import sizes from '../../utils/sizes';
 
 const options: Option[] = [
   {
@@ -49,6 +34,7 @@ const MyDetailProfileScreen = ({
   navigation,
 }: CommunityScreenProps<'MyDetailProfileScreen'>) => {
   const {palette} = useTheme();
+  const user = useAppSelector(UserSelector.getUser);
   const [selected, setSelected] = React.useState<Option>(options[0]);
   const {
     control,
@@ -62,7 +48,7 @@ const MyDetailProfileScreen = ({
 
   return (
     <ScreenContainer style={styles.con}>
-      <Header isBack title="username" />
+      <Header isBack title={user?.fullName} />
       <SegmentControl
         style={{
           marginVertical: sizes[16],

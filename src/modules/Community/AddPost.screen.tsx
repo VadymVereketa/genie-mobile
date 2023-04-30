@@ -11,20 +11,19 @@ import HeaderRight from './components/HeaderRight';
 import Dropdown, {usePointDropdown} from '../../components/Dropdown';
 import FigmaIcon from '../../components/FigmaIcon/FigmaIcon';
 import Header from '../../components/Header';
-
-import {Font14} from '../../uikit/Typography/Font14';
-import {sortOptions} from '../../data/sortOptions';
-import {allGroupOptions} from '../../data/groupOptions';
-import {responsiveWidth} from '../../utils/responsive-dimensions';
 import Post from '../../components/Post';
 import ScreenContainer from '../../components/ScreenContainer';
 import useTheme from '../../Context/ThemeContext';
-import {CommunityScreenProps} from '../../navigators/types';
+import {allGroupOptions} from '../../data/groupOptions';
+import {sortOptions} from '../../data/sortOptions';
+import type {CommunityScreenProps} from '../../navigators/types';
 import Button from '../../uikit/Button';
 import PlusButton from '../../uikit/PlusButton';
 import TagButton from '../../uikit/TagButton';
 import {ControllerTextInput} from '../../uikit/TextInput';
+import {Font14} from '../../uikit/Typography/Font14';
 import {Font20} from '../../uikit/Typography/Font20';
+import {responsiveWidth} from '../../utils/responsive-dimensions';
 import sizes from '../../utils/sizes';
 
 const AddPostScreen = ({navigation}: CommunityScreenProps<'AddPostScreen'>) => {
@@ -116,7 +115,7 @@ const AddPostScreen = ({navigation}: CommunityScreenProps<'AddPostScreen'>) => {
             borderColor: palette.border,
           },
         ]}>
-        <Font14.W400>{getValues().group.label}</Font14.W400>
+        <Font14.W400>{getValues().group.title}</Font14.W400>
         <FigmaIcon name="ArrowDown" size={sizes[14]} fill="transparent" />
       </TouchableOpacity>
 

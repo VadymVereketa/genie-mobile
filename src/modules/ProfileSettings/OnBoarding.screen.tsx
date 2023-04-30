@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import Boarding from './assets/boarding.svg';
+import FigmaIcon from '../../components/FigmaIcon/FigmaIcon';
 import Header from '../../components/Header';
 import ScreenContainer from '../../components/ScreenContainer';
 import Title from '../../components/Title';
@@ -11,6 +12,10 @@ import {useAppDispatch} from '../../redux/hooks';
 import {QuestionsActions} from '../../redux/slices/questionsSlice';
 import Button from '../../uikit/Button';
 import {Font14} from '../../uikit/Typography/Font14';
+import {
+  responsiveHeight,
+  responsiveWidth,
+} from '../../utils/responsive-dimensions';
 import sizes from '../../utils/sizes';
 
 const OnBoardingScreen = ({
@@ -49,7 +54,12 @@ const OnBoardingScreen = ({
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Boarding />
+        <FigmaIcon
+          name="Genie"
+          width={responsiveWidth(90)}
+          height={responsiveHeight(46)}
+          fill={'transparent'}
+        />
       </View>
       <Font14.W400
         style={{

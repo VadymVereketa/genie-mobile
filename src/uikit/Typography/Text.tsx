@@ -30,10 +30,7 @@ const MyText = React.memo(
 
     return (
       <RNText
-        onPress={() => {
-          Clipboard.setString(children);
-          onPress?.();
-        }}
+        onPress={onPress}
         maxFontSizeMultiplier={1}
         style={StyleSheet.compose(
           {
