@@ -40,6 +40,8 @@ const skinCare: MainCategory = {
 
 const categories: MainCategory[] = [makeUp, skinCare];
 
+console.log(categories);
+
 const setIdForCategoriesAndParentId = () => {
   let id = 1;
   categories.forEach(category => {

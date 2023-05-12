@@ -97,6 +97,42 @@ const Service = {
       throw new Error(e?.response?.data?.error || 'Server error');
     }
   },
+  forgotpassword: async (email: string) => {
+    try {
+      const res = await instance.post('auth/forgotpassword', {
+        email,
+      });
+
+      console.log('res', res);
+
+      return res.data.ok;
+    } catch (e) {
+      console.log(e);
+
+      throw new Error(e?.response?.data?.error || 'Server error');
+    }
+  },
+  resetpassword: async (data: {
+    token: string;
+    password: string;
+    confirmPassword: string;
+  }) => {
+    try {
+      const res = await instance.patch('auth/resetpassword/', {
+        password: data.password,
+        confirmPassword: data.confirmPassword,
+        passwordResetToken: data.token,
+      });
+
+      console.log(res);
+
+      return res.data;
+    } catch (e) {
+      console.log(e);
+
+      throw new Error(e?.response?.data?.error || 'Server error');
+    }
+  },
 };
 
 type TypeProduct =

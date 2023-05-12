@@ -22,6 +22,7 @@ import Social from '../../typings/Social';
 import Button from '../../uikit/Button';
 import {ControllerTextInput} from '../../uikit/TextInput';
 import {Font14} from '../../uikit/Typography/Font14';
+import {normalizeData} from '../../utils/normalizeData';
 import sizes from '../../utils/sizes';
 
 const LoginScreen = ({navigation}: AuthScreenProps<'LoginScreen'>) => {
@@ -42,7 +43,12 @@ const LoginScreen = ({navigation}: AuthScreenProps<'LoginScreen'>) => {
   });
 
   const onSubmit = (data: LoginUser) => {
-    dispatch(fetchLoginUser(data));
+    dispatch(
+      fetchLoginUser({
+        email: normalizeData.email(data.email),
+        password: data.password,
+      }),
+    );
   };
 
   const navigateToSignUp = () => {

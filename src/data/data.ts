@@ -163,31 +163,26 @@ const skinTypes: QuestionItem[] = [
   {
     id: 1,
     title: 'Dry',
-
     asset: 'Dry',
   },
   {
     id: 2,
     title: 'Oily',
-
     asset: 'Oily',
   },
   {
     id: 3,
     title: 'Combination',
-
     asset: 'Combination',
   },
   {
     id: 4,
     title: 'Sensitive',
-
     asset: 'Sensitive',
   },
   {
     id: 5,
     title: 'Mature',
-
     asset: 'Mature',
   },
   {

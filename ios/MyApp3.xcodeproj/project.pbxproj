@@ -582,7 +582,7 @@
 					"$(SDKROOT)/System/iOSSupport/usr/lib/swift",
 					"$(inherited)",
 				);
-				MARKETING_VERSION = 0.0.012;
+				MARKETING_VERSION = 0.0.014;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -625,7 +625,7 @@
 					"$(SDKROOT)/System/iOSSupport/usr/lib/swift",
 					"$(inherited)",
 				);
-				MARKETING_VERSION = 0.0.012;
+				MARKETING_VERSION = 0.0.014;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.modulemap\"",

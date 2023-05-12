@@ -20,8 +20,15 @@ export const useRules = () => {
     },
     password: {
       validate: (value: string) => {
-        return value.trim() === '' ? 'Please enter your password' : undefined;
+        if (value.trim() === '') return 'Please enter your password';
+        else if (value.trim().length < 7) {
+          return 'Password must be at least 7 characters';
+        }
+        return undefined;
       },
+    },
+    confirmPassword: (value2: string) => (value1: string) => {
+      return value2 === value1 ? undefined : 'Passwords do not match';
     },
   };
   return rules;

@@ -1,17 +1,20 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import WelcomeScreen from '../modules/Auth/Welcome.screen';
+
 import LoginScreen from '../modules/Auth/Login.screen';
-import SignUpScreen from '../modules/Auth/Signup.screen';
-import ResetPasswordScreen from '../modules/Auth/ResetPassword.screen';
 import RecoveryPasswordScreen from '../modules/Auth/RecoveryPassword.screen';
+import ResetPasswordScreen from '../modules/Auth/ResetPassword.screen';
+import SignUpScreen from '../modules/Auth/Signup.screen';
+import WelcomeScreen from '../modules/Auth/Welcome.screen';
 
 export type AuthNavigatorParamList = {
   WelcomeScreen: undefined;
   LoginScreen: undefined;
   SignUpScreen: undefined;
   ResetPasswordScreen: undefined;
-  RecoveryPasswordScreen: undefined;
+  RecoveryPasswordScreen: {
+    token: string;
+  };
 };
 
 const Stack = createNativeStackNavigator<AuthNavigatorParamList>();

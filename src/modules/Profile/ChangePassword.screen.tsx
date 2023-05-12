@@ -26,11 +26,12 @@ const ChangePasswordScreen = ({
     control,
     handleSubmit,
     formState: {errors},
+    getValues,
   } = useForm({
     defaultValues: {
       password: '',
-      newpassword: '',
-      newpassword2: '',
+      oldPassword: '',
+      confirmPassword: '',
     },
   });
 
@@ -45,7 +46,7 @@ const ChangePasswordScreen = ({
       <ControllerTextInput
         label="Old password"
         control={control}
-        name="password"
+        name="oldPassword"
         errors={errors}
         outerStyle={{
           marginTop: sizes[16],
@@ -56,7 +57,7 @@ const ChangePasswordScreen = ({
       <ControllerTextInput
         label="New password"
         control={control}
-        name="newpassword"
+        name="password"
         errors={errors}
         outerStyle={{
           marginTop: sizes[16],
@@ -67,13 +68,15 @@ const ChangePasswordScreen = ({
       <ControllerTextInput
         label="Confirm password"
         control={control}
-        name="newpassword2"
+        name="confirmPassword"
         errors={errors}
         outerStyle={{
           marginTop: sizes[16],
         }}
         secureTextEntry
-        rules={rules.password}
+        rules={{
+          validate: rules.confirmPassword(getValues('password')),
+        }}
       />
       <View
         style={{

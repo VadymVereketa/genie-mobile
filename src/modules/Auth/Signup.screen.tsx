@@ -19,6 +19,7 @@ import Button from '../../uikit/Button';
 import CheckBox from '../../uikit/CheckBox';
 import {ControllerTextInput} from '../../uikit/TextInput';
 import {Font14} from '../../uikit/Typography/Font14';
+import {normalizeData} from '../../utils/normalizeData';
 import {
   responsiveHeight,
   responsiveWidth,
@@ -46,7 +47,12 @@ const SignUpScreen = ({navigation}: AuthScreenProps<'SignUpScreen'>) => {
   });
 
   const onSubmit = (data: CreateUser) => {
-    dispatch(fetchCreateUser(data));
+    dispatch(
+      fetchCreateUser({
+        ...data,
+        email: normalizeData.email(data.email),
+      }),
+    );
     console.log('data', data);
   };
 

@@ -39,7 +39,7 @@ const RootNavigator = React.memo(() => {
         <Stack.Screen name="AuthNavigator" component={AuthNavigator} />
       )}
 
-      {!isFinished && (
+      {isAuth && !isFinished && (
         <Stack.Screen
           name="ProfileSettingsNavigator"
           component={ProfileSettingsNavigator}
