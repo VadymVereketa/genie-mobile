@@ -128,12 +128,10 @@ android {
         }
 
         release {
-            if (project.hasProperty('GENIE_UPLOAD_STORE_FILE')) {
-                storeFile file(GENIE_UPLOAD_STORE_FILE)
-                storePassword GENIE_UPLOAD_STORE_PASSWORD
-                keyAlias GENIE_UPLOAD_KEY_ALIAS
-                keyPassword GENIE_UPLOAD_STORE_PASSWORD
-            }
+            storeFile file(GENIE_UPLOAD_STORE_FILE)
+            storePassword GENIE_UPLOAD_STORE_PASSWORD
+            keyAlias GENIE_UPLOAD_KEY_ALIAS
+            keyPassword GENIE_UPLOAD_STORE_PASSWORD
         }
     }
     buildTypes {
